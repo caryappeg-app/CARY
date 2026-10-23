@@ -1,0 +1,25 @@
+{
+	"name": "cary-ads-api",
+	"main": "src/index.js",
+	"compatibility_date": "2026-10-16",
+
+	// R2: الـ binding اسمه R2_BUCKET في الكود، و bucket_name هو اسم الـ Bucket الحقيقي عندك
+	"r2_buckets": [
+		{ "binding": "R2_BUCKET", "bucket_name": "cary-images" }
+	],
+
+	// متغيرات مش سرية
+	"vars": {
+		"SUPABASE_URL": "https://qjlwtitcwsqnhcfrxdcv.supabase.co",
+		// الرابط العام للـ Bucket (r2.dev أو دومين خاص)، من غير / في الآخر
+		"R2_PUBLIC_URL": "https://REPLACE_WITH_YOUR_R2_PUBLIC_DOMAIN",
+		"ALLOWED_ORIGIN": "*"
+	},
+
+	// SUPABASE_KEY سر: بيتحط بالأمر  npx wrangler secret put SUPABASE_KEY
+
+	"observability": {
+		"enabled": true,
+		"logs": { "enabled": true, "head_sampling_rate": 1 }
+	}
+}

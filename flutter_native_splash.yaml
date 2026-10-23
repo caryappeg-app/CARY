@@ -1,0 +1,21 @@
+# حطه في جذر المشروع (جنب pubspec.yaml)
+flutter_native_splash:
+  # خلفية السبلاش الأصلية (نفس خلفية سبلاش التطبيق عشان الانتقال يبان واحد)
+  color: "#FFFFFF"
+  image: assets/images/splash.png
+
+  # الوضع الداكن (الصورة لازم PNG)
+  color_dark: "#141D2F"
+  image_dark: assets/images/splash1.png
+
+  # أندرويد 12 أو أحدث
+  android_12:
+    color: "#FFFFFF"
+    image: assets/images/splash1.png
+    color_dark: "#141D2F"
+    image_dark: assets/images/splash1.png
+
+  android: true
+  ios: true
+  fullscreen: true
+

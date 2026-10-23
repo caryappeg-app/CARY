@@ -1,0 +1,6 @@
+# أضفها (أو شغّل: flutter pub add dio crypto flutter_secure_storage flutter_bloc)
+dependencies:
+  flutter_bloc: ^8.1.6
+  dio: ^5.7.0
+  crypto: ^3.0.5
+  flutter_secure_storage: ^9.2.2

@@ -1,0 +1,2402 @@
+[
+  {
+    "id": 1,
+    "name_en": "Toyota",
+    "name_ar": "تويوتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/toyota.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 2,
+    "name_en": "Mercedes-Benz",
+    "name_ar": "مرسيدس بنز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mercedes-benz.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 3,
+    "name_en": "BMW",
+    "name_ar": "بي إم دبليو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bmw.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 4,
+    "name_en": "Hyundai",
+    "name_ar": "هيونداي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hyundai.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 5,
+    "name_en": "Nissan",
+    "name_ar": "نيسان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/nissan.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 6,
+    "name_en": "Kia",
+    "name_ar": "كيا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/kia.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 7,
+    "name_en": "Audi",
+    "name_ar": "أودي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/audi.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 8,
+    "name_en": "Chevrolet",
+    "name_ar": "شيفروليه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/chevrolet.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 9,
+    "name_en": "Ford",
+    "name_ar": "فورد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ford.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 10,
+    "name_en": "Volkswagen",
+    "name_ar": "فولكس فاجن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/volkswagen.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 11,
+    "name_en": "Honda",
+    "name_ar": "هوندا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/honda.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 12,
+    "name_en": "Lexus",
+    "name_ar": "لكزس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lexus.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 13,
+    "name_en": "Peugeot",
+    "name_ar": "بيجو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/peugeot.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 14,
+    "name_en": "Renault",
+    "name_ar": "رينو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/renault.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 15,
+    "name_en": "MG",
+    "name_ar": "إم جي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mg.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 16,
+    "name_en": "Chery",
+    "name_ar": "شيري",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/chery.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 17,
+    "name_en": "Geely",
+    "name_ar": "جيلي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/geely.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 18,
+    "name_en": "Changan",
+    "name_ar": "شانجان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/changan.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 19,
+    "name_en": "Haval",
+    "name_ar": "هافال",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/haval.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 20,
+    "name_en": "Mitsubishi",
+    "name_ar": "ميتسوبيشي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mitsubishi.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 21,
+    "name_en": "Mazda",
+    "name_ar": "مازدا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mazda.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 22,
+    "name_en": "Subaru",
+    "name_ar": "سوبارو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/subaru.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 23,
+    "name_en": "Suzuki",
+    "name_ar": "سوزوكي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/suzuki.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 24,
+    "name_en": "Jeep",
+    "name_ar": "جيب",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jeep.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 25,
+    "name_en": "Dodge",
+    "name_ar": "دودج",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/dodge.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 26,
+    "name_en": "Porsche",
+    "name_ar": "بورشه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/porsche.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 27,
+    "name_en": "Land Rover",
+    "name_ar": "لاند روفر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/land-rover.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 28,
+    "name_en": "Jaguar",
+    "name_ar": "جاكوار",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jaguar.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 29,
+    "name_en": "Volvo",
+    "name_ar": "فولفو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/volvo.png",
+    "country": "Sweden",
+    "country_ar": "السويد"
+  },
+  {
+    "id": 30,
+    "name_en": "Fiat",
+    "name_ar": "فيات",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/fiat.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 31,
+    "name_en": "Skoda",
+    "name_ar": "سكودا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/skoda.png",
+    "country": "Czech Republic",
+    "country_ar": "التشيك"
+  },
+  {
+    "id": 32,
+    "name_en": "Seat",
+    "name_ar": "سيات",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/seat.png",
+    "country": "Spain",
+    "country_ar": "إسبانيا"
+  },
+  {
+    "id": 33,
+    "name_en": "Opel",
+    "name_ar": "أوبل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/opel.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 34,
+    "name_en": "Infiniti",
+    "name_ar": "إنفينيتي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/infiniti.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 35,
+    "name_en": "Genesis",
+    "name_ar": "جينيسيس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/genesis.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 36,
+    "name_en": "GMC",
+    "name_ar": "جي إم سي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gmc.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 37,
+    "name_en": "Cadillac",
+    "name_ar": "كاديلاك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/cadillac.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 38,
+    "name_en": "Lincoln",
+    "name_ar": "لينكون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lincoln.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 39,
+    "name_en": "Tesla",
+    "name_ar": "تسلا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tesla.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 40,
+    "name_en": "BYD",
+    "name_ar": "بي واي دي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/byd.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 41,
+    "name_en": "Alfa Romeo",
+    "name_ar": "ألفا روميو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/alfa-romeo.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 42,
+    "name_en": "Aston Martin",
+    "name_ar": "أستون مارتن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/aston-martin.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 43,
+    "name_en": "Bentley",
+    "name_ar": "بنتلي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bentley.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 44,
+    "name_en": "Bugatti",
+    "name_ar": "بوغاتي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bugatti.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 45,
+    "name_en": "Chrysler",
+    "name_ar": "كرايسلر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/chrysler.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 46,
+    "name_en": "Citroen",
+    "name_ar": "سيتروين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/citroen.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 47,
+    "name_en": "Dacia",
+    "name_ar": "داتشيا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/dacia.png",
+    "country": "Romania",
+    "country_ar": "رومانيا"
+  },
+  {
+    "id": 48,
+    "name_en": "Daewoo",
+    "name_ar": "دايو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/daewoo.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 49,
+    "name_en": "Daihatsu",
+    "name_ar": "دايهاستو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/daihatsu.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 50,
+    "name_en": "Ferrari",
+    "name_ar": "فيراري",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ferrari.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 51,
+    "name_en": "Great Wall",
+    "name_ar": "جريت وول",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/great-wall.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 52,
+    "name_en": "Hummer",
+    "name_ar": "همر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hummer.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 53,
+    "name_en": "Isuzu",
+    "name_ar": "إيسوزو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/isuzu.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 54,
+    "name_en": "JAC",
+    "name_ar": "جاك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jac.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 55,
+    "name_en": "Lamborghini",
+    "name_ar": "لامبورغيني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lamborghini.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 56,
+    "name_en": "Lancia",
+    "name_ar": "لانشيا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lancia.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 57,
+    "name_en": "Lotus",
+    "name_ar": "لوتس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lotus.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 58,
+    "name_en": "Maserati",
+    "name_ar": "مازيراتي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/maserati.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 59,
+    "name_en": "McLaren",
+    "name_ar": "ماكلارين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mclaren.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 60,
+    "name_en": "Mini",
+    "name_ar": "ميني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mini.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 61,
+    "name_en": "RAM",
+    "name_ar": "رام",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ram.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 62,
+    "name_en": "Rolls-Royce",
+    "name_ar": "رولز رويس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rolls-royce.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 63,
+    "name_en": "Smart",
+    "name_ar": "سمارت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/smart.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 64,
+    "name_en": "SsangYong",
+    "name_ar": "سانغ يونغ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ssangyong.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 65,
+    "name_en": "Acura",
+    "name_ar": "أكورا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/acura.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 66,
+    "name_en": "Baic",
+    "name_ar": "بايك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/baic.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 67,
+    "name_en": "Borgward",
+    "name_ar": "بورجوارد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/borgward.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 68,
+    "name_en": "Brilliance",
+    "name_ar": "بريليانس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/brilliance.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 69,
+    "name_en": "Buick",
+    "name_ar": "بيوك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/buick.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 70,
+    "name_en": "Chery Exeed",
+    "name_ar": "إكسيد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/exeed.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 71,
+    "name_en": "DFSK",
+    "name_ar": "دي إف اس كي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/dfsk.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 72,
+    "name_en": "Dongfeng",
+    "name_ar": "دونغفينغ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/dongfeng.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 73,
+    "name_en": "Faw",
+    "name_ar": "فاو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/faw.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 74,
+    "name_en": "Foton",
+    "name_ar": "فوتون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/foton.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 75,
+    "name_en": "GAC",
+    "name_ar": "جي أي سي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gac-motor.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 76,
+    "name_en": "Hongqi",
+    "name_ar": "هونغ تشي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hongqi.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 77,
+    "name_en": "Jetour",
+    "name_ar": "جيتور",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jetour.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 78,
+    "name_en": "JMC",
+    "name_ar": "جي إم سي الصينية",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jmc.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 79,
+    "name_en": "Lada",
+    "name_ar": "لادا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lada.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 80,
+    "name_en": "Lifan",
+    "name_ar": "ليفان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lifan.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 81,
+    "name_en": "Lucid",
+    "name_ar": "لوسيد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lucid.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 82,
+    "name_en": "Mahindra",
+    "name_ar": "ماهيندرا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mahindra.png",
+    "country": "India",
+    "country_ar": "الهند"
+  },
+  {
+    "id": 83,
+    "name_en": "Maxus",
+    "name_ar": "ماكسوس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/maxus.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 84,
+    "name_en": "Nio",
+    "name_ar": "نيو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/nio.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 85,
+    "name_en": "Omoda",
+    "name_ar": "أومودا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/omoda.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 86,
+    "name_en": "Polestar",
+    "name_ar": "بولستار",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/polestar.png",
+    "country": "Sweden",
+    "country_ar": "السويد"
+  },
+  {
+    "id": 87,
+    "name_en": "Proton",
+    "name_ar": "بروتون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/proton.png",
+    "country": "Malaysia",
+    "country_ar": "ماليزيا"
+  },
+  {
+    "id": 88,
+    "name_en": "Rivian",
+    "name_ar": "ريفيان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rivian.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 89,
+    "name_en": "Roewe",
+    "name_ar": "رويوي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/roewe.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 90,
+    "name_en": "Soueast",
+    "name_ar": "سويست",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/soueast.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 91,
+    "name_en": "Tata",
+    "name_ar": "تاتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tata.png",
+    "country": "India",
+    "country_ar": "الهند"
+  },
+  {
+    "id": 92,
+    "name_en": "Tank",
+    "name_ar": "تانك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tank.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 93,
+    "name_en": "VinFast",
+    "name_ar": "فين فاست",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/vinfast.png",
+    "country": "Vietnam",
+    "country_ar": "فيتنام"
+  },
+  {
+    "id": 94,
+    "name_en": "Xpeng",
+    "name_ar": "إكس بينغ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/xpeng.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 95,
+    "name_en": "Zeekr",
+    "name_ar": "زيكر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/zeekr.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 96,
+    "name_en": "Zotye",
+    "name_ar": "زوتي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/zotye.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 97,
+    "name_en": "Abarth",
+    "name_ar": "أبارث",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/abarth.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 98,
+    "name_en": "Alpine",
+    "name_ar": "ألباين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/alpine.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 99,
+    "name_en": "Aro",
+    "name_ar": "آرو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/aro.png",
+    "country": "Romania",
+    "country_ar": "رومانيا"
+  },
+  {
+    "id": 100,
+    "name_en": "Asia Motors",
+    "name_ar": "آسيا موتورز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/asia-motors.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 101,
+    "name_en": "Austin",
+    "name_ar": "أوستن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/austin.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 102,
+    "name_en": "Autobianchi",
+    "name_ar": "أوتوبيانكي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/autobianchi.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 103,
+    "name_en": "Baojun",
+    "name_ar": "باوجون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/baojun.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 104,
+    "name_en": "Bertone",
+    "name_ar": "بيرتوني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bertone.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 105,
+    "name_en": "Caterham",
+    "name_ar": "كايترهام",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/caterham.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 106,
+    "name_en": "Cupra",
+    "name_ar": "كوبرا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/cupra.png",
+    "country": "Spain",
+    "country_ar": "إسبانيا"
+  },
+  {
+    "id": 107,
+    "name_en": "DS Automobiles",
+    "name_ar": "دي إس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ds-automobiles.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 108,
+    "name_en": "Eagle",
+    "name_ar": "إيجل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/eagle.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 109,
+    "name_en": "Fisker",
+    "name_ar": "فيسكر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/fisker.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 110,
+    "name_en": "Gaz",
+    "name_ar": "جاز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gaz.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 111,
+    "name_en": "Geo",
+    "name_ar": "جيو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/geo.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 112,
+    "name_en": "Ineos",
+    "name_ar": "إينيوس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ineos.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 113,
+    "name_en": "Holden",
+    "name_ar": "هولدن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/holden.png",
+    "country": "Australia",
+    "country_ar": "أستراليا"
+  },
+  {
+    "id": 114,
+    "name_en": "Koenigsegg",
+    "name_ar": "كوانيغسيغ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/koenigsegg.png",
+    "country": "Sweden",
+    "country_ar": "السويد"
+  },
+  {
+    "id": 115,
+    "name_en": "Lada VAZ",
+    "name_ar": "لادا فاز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lada.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 116,
+    "name_en": "Ligier",
+    "name_ar": "ليجيه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ligier.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 117,
+    "name_en": "Maybach",
+    "name_ar": "مايباخ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/maybach.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 118,
+    "name_en": "Mercury",
+    "name_ar": "ميركوري",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mercury.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 119,
+    "name_en": "Morgan",
+    "name_ar": "مورجان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/morgan.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 120,
+    "name_en": "Oldsmobile",
+    "name_ar": "أولدزموبيل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/oldsmobile.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 121,
+    "name_en": "Pagani",
+    "name_ar": "باغاني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/pagani.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 122,
+    "name_en": "Plymouth",
+    "name_ar": "بليموث",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/plymouth.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 123,
+    "name_en": "Pontiac",
+    "name_ar": "بونتياك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/pontiac.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 124,
+    "name_en": "Saab",
+    "name_ar": "ساب",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/saab.png",
+    "country": "Sweden",
+    "country_ar": "السويد"
+  },
+  {
+    "id": 125,
+    "name_en": "Saturn",
+    "name_ar": "ساتورن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/saturn.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 126,
+    "name_en": "Scion",
+    "name_ar": "سايون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/scion.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 127,
+    "name_en": "Tofas",
+    "name_ar": "توفاش",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tofas.png",
+    "country": "Turkey",
+    "country_ar": "تركيا"
+  },
+  {
+    "id": 128,
+    "name_en": "Uaz",
+    "name_ar": "واز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/uaz.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 129,
+    "name_en": "Vauxhall",
+    "name_ar": "فوكسهول",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/vauxhall.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 130,
+    "name_en": "Wartburg",
+    "name_ar": "فارتبورغ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/wartburg.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 131,
+    "name_en": "AC Cars",
+    "name_ar": "إي سي كارس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ac.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 132,
+    "name_en": "Aiways",
+    "name_ar": "آي وايز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/aiways.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 133,
+    "name_en": "Aixam",
+    "name_ar": "إيكسام",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/aixam.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 134,
+    "name_en": "Alpina",
+    "name_ar": "ألبينا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/alpina.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 135,
+    "name_en": "AMC",
+    "name_ar": "إيه إم سي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/amc.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 136,
+    "name_en": "Ariel",
+    "name_ar": "أرييل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ariel.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 137,
+    "name_en": "Artega",
+    "name_ar": "أرتيجا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/artega.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 138,
+    "name_en": "AvtoVAZ",
+    "name_ar": "أفتوفاز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/avtovaz.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 139,
+    "name_en": "BAC",
+    "name_ar": "باك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bac.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 140,
+    "name_en": "Barkas",
+    "name_ar": "باركاس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/barkas.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 141,
+    "name_en": "Beijing Automobile Works",
+    "name_ar": "بيجين أوتوموبيل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/baw.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 142,
+    "name_en": "Bitter",
+    "name_ar": "بيتر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bitter.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 143,
+    "name_en": "Bizzarrini",
+    "name_ar": "بيزاريني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bizzarrini.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 144,
+    "name_en": "Brabus",
+    "name_ar": "برابوس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/brabus.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 145,
+    "name_en": "Breguet",
+    "name_ar": "بريجيه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/breguet.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 146,
+    "name_en": "Bristol",
+    "name_ar": "بريستول",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/bristol.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 147,
+    "name_en": "Callaway",
+    "name_ar": "كالواي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/callaway.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 148,
+    "name_en": "Carbodies",
+    "name_ar": "كاربوديز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/carbodies.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 149,
+    "name_en": "Casalini",
+    "name_ar": "كاساليني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/casalini.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 150,
+    "name_en": "Catenary",
+    "name_ar": "كاتيناري",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/catenary.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 151,
+    "name_en": "Cenntro",
+    "name_ar": "سينترو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/cenntro.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 152,
+    "name_en": "Changhe",
+    "name_ar": "تشانغهي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/changhe.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 153,
+    "name_en": "Chatenet",
+    "name_ar": "شاتينيه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/chatenet.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 154,
+    "name_en": "Cizeta",
+    "name_ar": "شيزيتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/cizeta.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 155,
+    "name_en": "Cobra",
+    "name_ar": "كوبرا شيلبي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/shelby.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 156,
+    "name_en": "Covini",
+    "name_ar": "كوفيني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/covini.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 157,
+    "name_en": "Dartz",
+    "name_ar": "دارتز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/dartz.png",
+    "country": "Latvia",
+    "country_ar": "لاتفيا"
+  },
+  {
+    "id": 158,
+    "name_en": "De Tomaso",
+    "name_ar": "دي توماسو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/de-tomaso.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 159,
+    "name_en": "Delage",
+    "name_ar": "ديلاج",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/delage.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 160,
+    "name_en": "DeLorean",
+    "name_ar": "ديلوريان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/delorean.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 161,
+    "name_en": "Derways",
+    "name_ar": "ديروايز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/derways.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 162,
+    "name_en": "Diatto",
+    "name_ar": "دياتو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/diatto.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 163,
+    "name_en": "Dina",
+    "name_ar": "دينا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/dina.png",
+    "country": "Mexico",
+    "country_ar": "المكسيك"
+  },
+  {
+    "id": 164,
+    "name_en": "Donkervoort",
+    "name_ar": "دونكرفورت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/donkervoort.png",
+    "country": "Netherlands",
+    "country_ar": "هولندا"
+  },
+  {
+    "id": 165,
+    "name_en": "Elfin",
+    "name_ar": "إلفين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/elfin.png",
+    "country": "Australia",
+    "country_ar": "أستراليا"
+  },
+  {
+    "id": 166,
+    "name_en": "Elva",
+    "name_ar": "إلفا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/elva.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 167,
+    "name_en": "Engler",
+    "name_ar": "إنجلر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/engler.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 168,
+    "name_en": "Facel Vega",
+    "name_ar": "فاسيل فيجا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/facel-vega.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 169,
+    "name_en": "FARBIO",
+    "name_ar": "فاربيو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/farbio.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 170,
+    "name_en": "Faraday Future",
+    "name_ar": "فاراداي فيوتشر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/faraday-future.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 171,
+    "name_en": "Fornasari",
+    "name_ar": "فورناساري",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/fornasari.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 172,
+    "name_en": "FSO",
+    "name_ar": "إف إس أوه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/fso.png",
+    "country": "Poland",
+    "country_ar": "بولندا"
+  },
+  {
+    "id": 173,
+    "name_en": "Fuqi",
+    "name_ar": "فوكي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/fuqi.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 174,
+    "name_en": "Genty",
+    "name_ar": "جينتي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/genty.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 175,
+    "name_en": "Gillet",
+    "name_ar": "جيليه",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gillet.png",
+    "country": "Belgium",
+    "country_ar": "بلجيكا"
+  },
+  {
+    "id": 176,
+    "name_en": "Ginetta",
+    "name_ar": "جينتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ginetta.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 177,
+    "name_en": "GMC Truck",
+    "name_ar": "شاحنات جي إم سي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gmc.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 178,
+    "name_en": "Gonow",
+    "name_ar": "جونو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gonow.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 179,
+    "name_en": "Gordon Murray",
+    "name_ar": "جوردون موراي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gordon-murray.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 180,
+    "name_en": "Gumpert",
+    "name_ar": "جومبيرت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/gumpert.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 181,
+    "name_en": "Hafei",
+    "name_ar": "هافي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hafei.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 182,
+    "name_en": "Haima",
+    "name_ar": "هايما",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/haima.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 183,
+    "name_en": "Hennessey",
+    "name_ar": "هينيسي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hennessey.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 184,
+    "name_en": "Hillman",
+    "name_ar": "هيلمان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hillman.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 185,
+    "name_en": "Hispano-Suiza",
+    "name_ar": "هيسبانو سويزا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hispano-suiza.png",
+    "country": "Spain",
+    "country_ar": "إسبانيا"
+  },
+  {
+    "id": 186,
+    "name_en": "Hommell",
+    "name_ar": "هوميل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hommell.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 187,
+    "name_en": "Huanghai",
+    "name_ar": "هوانغهاي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/huanghai.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 188,
+    "name_en": "Hudson",
+    "name_ar": "هادسن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/hudson.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 189,
+    "name_en": "Imperial",
+    "name_ar": "إمبيريال",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/imperial.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 190,
+    "name_en": "Innocenti",
+    "name_ar": "إينوشينتي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/innocenti.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 191,
+    "name_en": "Intermeccanica",
+    "name_ar": "إنتيرميكانيكا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/intermeccanica.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 192,
+    "name_en": "International Harvester",
+    "name_ar": "إنترناشيونال هارفيستر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/international-harvester.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 193,
+    "name_en": "Invicta",
+    "name_ar": "إنفيكتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/invicta.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 194,
+    "name_en": "Iran Khodro",
+    "name_ar": "إيران خودرو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/iran-khodro.png",
+    "country": "Iran",
+    "country_ar": "إيران"
+  },
+  {
+    "id": 195,
+    "name_en": "Isdera",
+    "name_ar": "إيزديرا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/isdera.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 196,
+    "name_en": "Iso",
+    "name_ar": "إيزو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/iso.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 197,
+    "name_en": "JBC",
+    "name_ar": "جي بي سي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jbc.png",
+    "country": "Spain",
+    "country_ar": "إسبانيا"
+  },
+  {
+    "id": 198,
+    "name_en": "Jensen",
+    "name_ar": "جينسن",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jensen.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 199,
+    "name_en": "Jinbei",
+    "name_ar": "جينبي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jinbei.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 200,
+    "name_en": "Jonas",
+    "name_ar": "جوناس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/jonas.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 201,
+    "name_en": "Kaiser",
+    "name_ar": "كايزر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/kaiser.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 202,
+    "name_en": "KTM",
+    "name_ar": "كي تي إم",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ktm.png",
+    "country": "Austria",
+    "country_ar": "النمسا"
+  },
+  {
+    "id": 203,
+    "name_en": "Karma",
+    "name_ar": "كارما",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/karma.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 204,
+    "name_en": "Landwind",
+    "name_ar": "لاندويند",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/landwind.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 205,
+    "name_en": "Leapmotor",
+    "name_ar": "ليب موتور",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/leapmotor.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 206,
+    "name_en": "Levc",
+    "name_ar": "ليفيك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/levc.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 207,
+    "name_en": "Li Auto",
+    "name_ar": "لي أوتو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/li-auto.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 208,
+    "name_en": "Ligier Microcars",
+    "name_ar": "ليجيه ميكروكارز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ligier.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 209,
+    "name_en": "Lister",
+    "name_ar": "ليستر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lister.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 210,
+    "name_en": "Lordstown",
+    "name_ar": "لوردستاون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/lordstown.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 211,
+    "name_en": "Luxgen",
+    "name_ar": "لوكسجين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/luxgen.png",
+    "country": "Taiwan",
+    "country_ar": "تايوان"
+  },
+  {
+    "id": 212,
+    "name_en": "Mahindra Reva",
+    "name_ar": "ماهيندرا ريفا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mahindra.png",
+    "country": "India",
+    "country_ar": "الهند"
+  },
+  {
+    "id": 213,
+    "name_en": "Marcos",
+    "name_ar": "ماركوس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/marcos.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 214,
+    "name_en": "Marlin",
+    "name_ar": "مارلين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/marlin.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 215,
+    "name_en": "Maruti Suzuki",
+    "name_ar": "ماروتي سوزوكي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/maruti-suzuki.png",
+    "country": "India",
+    "country_ar": "الهند"
+  },
+  {
+    "id": 216,
+    "name_en": "Mastretta",
+    "name_ar": "ماستريتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mastretta.png",
+    "country": "Mexico",
+    "country_ar": "المكسيك"
+  },
+  {
+    "id": 217,
+    "name_en": "Melkus",
+    "name_ar": "ميلكوس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/melkus.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 218,
+    "name_en": "Metrocab",
+    "name_ar": "ميتروكاب",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/metrocab.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 219,
+    "name_en": "Microcar",
+    "name_ar": "ميكروكار",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/microcar.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 220,
+    "name_en": "Mitsuoka",
+    "name_ar": "ميتسوكا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mitsuoka.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 221,
+    "name_en": "MK Sportscars",
+    "name_ar": "إم كي سبورتس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mk.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 222,
+    "name_en": "Moskvich",
+    "name_ar": "موسكفيتش",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/moskvich.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 223,
+    "name_en": "MPM Motors",
+    "name_ar": "إم بي إم موتورز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mpm.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 224,
+    "name_en": "Mullen",
+    "name_ar": "مولين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/mullen.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 225,
+    "name_en": "NAMI",
+    "name_ar": "نامي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/nami.png",
+    "country": "Russia",
+    "country_ar": "روسيا"
+  },
+  {
+    "id": 226,
+    "name_en": "Nash",
+    "name_ar": "ناش",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/nash.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 227,
+    "name_en": "Neta",
+    "name_ar": "نيتا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/neta.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 228,
+    "name_en": "Nikola",
+    "name_ar": "نيكولا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/nikola.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 229,
+    "name_en": "Noble",
+    "name_ar": "نوبل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/noble.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 230,
+    "name_en": "Nyayo",
+    "name_ar": "نيايو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/nyayo.png",
+    "country": "Kenya",
+    "country_ar": "كينيا"
+  },
+  {
+    "id": 231,
+    "name_en": "Oltcit",
+    "name_ar": "أولتسيت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/oltcit.png",
+    "country": "Romania",
+    "country_ar": "رومانيا"
+  },
+  {
+    "id": 232,
+    "name_en": "Oullim",
+    "name_ar": "أوليم",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/oullim.png",
+    "country": "South Korea",
+    "country_ar": "كوريا الجنوبية"
+  },
+  {
+    "id": 233,
+    "name_en": "Packard",
+    "name_ar": "باكارد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/packard.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 234,
+    "name_en": "Panhard",
+    "name_ar": "بانهارد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/panhard.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 235,
+    "name_en": "Panoz",
+    "name_ar": "بانوز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/panoz.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 236,
+    "name_en": "Perodua",
+    "name_ar": "بيرودوا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/perodua.png",
+    "country": "Malaysia",
+    "country_ar": "ماليزيا"
+  },
+  {
+    "id": 237,
+    "name_en": "Pininfarina",
+    "name_ar": "بينينفارينا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/pininfarina.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 238,
+    "name_en": "Premier",
+    "name_ar": "بريمير",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/premier.png",
+    "country": "India",
+    "country_ar": "الهند"
+  },
+  {
+    "id": 239,
+    "name_en": "Puch",
+    "name_ar": "بوخ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/puch.png",
+    "country": "Austria",
+    "country_ar": "النمسا"
+  },
+  {
+    "id": 240,
+    "name_en": "Qvale",
+    "name_ar": "كفالي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/qvale.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 241,
+    "name_en": "Radical",
+    "name_ar": "راديكال",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/radical.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 242,
+    "name_en": "Rambler",
+    "name_ar": "رامبلر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rambler.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 243,
+    "name_en": "Ranz",
+    "name_ar": "رانز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ranz.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 244,
+    "name_en": "Reliant",
+    "name_ar": "ريلاينت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/reliant.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 245,
+    "name_en": "Rezovani",
+    "name_ar": "رضواني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rezvani.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 246,
+    "name_en": "Rimac",
+    "name_ar": "ريماك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rimac.png",
+    "country": "Croatia",
+    "country_ar": "كرواتيا"
+  },
+  {
+    "id": 247,
+    "name_en": "Rinspeed",
+    "name_ar": "رينسبيد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rinspeed.png",
+    "country": "Switzerland",
+    "country_ar": "سويسرا"
+  },
+  {
+    "id": 248,
+    "name_en": "Rocar",
+    "name_ar": "روكار",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rocar.png",
+    "country": "Romania",
+    "country_ar": "رومانيا"
+  },
+  {
+    "id": 249,
+    "name_en": "Rochdale",
+    "name_ar": "روتشديل",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rochdale.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 250,
+    "name_en": "Roho",
+    "name_ar": "روهو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/roho.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 251,
+    "name_en": "Rossion",
+    "name_ar": "روسيون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rossion.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 252,
+    "name_en": "Rover",
+    "name_ar": "روفر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/rover.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 253,
+    "name_en": "Ruf",
+    "name_ar": "روف",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ruf.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 254,
+    "name_en": "Saipa",
+    "name_ar": "سايبا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/saipa.png",
+    "country": "Iran",
+    "country_ar": "إيران"
+  },
+  {
+    "id": 255,
+    "name_en": "Saleen",
+    "name_ar": "سالين",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/saleen.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 256,
+    "name_en": "Santana",
+    "name_ar": "سانتانا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/santana.png",
+    "country": "Spain",
+    "country_ar": "إسبانيا"
+  },
+  {
+    "id": 257,
+    "name_en": "Sbarro",
+    "name_ar": "سبارو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/sbarro.png",
+    "country": "Switzerland",
+    "country_ar": "سويسرا"
+  },
+  {
+    "id": 258,
+    "name_en": "Scania",
+    "name_ar": "اسكانيا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/scania.png",
+    "country": "Sweden",
+    "country_ar": "السويد"
+  },
+  {
+    "id": 259,
+    "name_en": "Scion",
+    "name_ar": "سايون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/scion.png",
+    "country": "Japan",
+    "country_ar": "اليابان"
+  },
+  {
+    "id": 260,
+    "name_en": "SERES",
+    "name_ar": "سيريس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/seres.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 261,
+    "name_en": "Shelby",
+    "name_ar": "شيلبي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/shelby.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 262,
+    "name_en": "Shuanghuan",
+    "name_ar": "شوانغهوان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/shuanghuan.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 263,
+    "name_en": "Simca",
+    "name_ar": "سيمكا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/simca.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 264,
+    "name_en": "Singer",
+    "name_ar": "سينجر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/singer.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 265,
+    "name_en": "Sisu Auto",
+    "name_ar": "سيسو أوتو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/sisu.png",
+    "country": "Finland",
+    "country_ar": "فنلندا"
+  },
+  {
+    "id": 266,
+    "name_en": "Spectre",
+    "name_ar": "سبكتر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/spectre.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 267,
+    "name_en": "Spyker",
+    "name_ar": "سبايكر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/spyker.png",
+    "country": "Netherlands",
+    "country_ar": "هولندا"
+  },
+  {
+    "id": 268,
+    "name_en": "SSC",
+    "name_ar": "إس إس سي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ssc.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 269,
+    "name_en": "Standard",
+    "name_ar": "ستاندرد",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/standard.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 270,
+    "name_en": "Stanguellini",
+    "name_ar": "ستانجويليني",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/stanguellini.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 271,
+    "name_en": "Steyr",
+    "name_ar": "شتاير",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/steyr.png",
+    "country": "Austria",
+    "country_ar": "النمسا"
+  },
+  {
+    "id": 272,
+    "name_en": "Studebaker",
+    "name_ar": "ستودبيكر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/studebaker.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 273,
+    "name_en": "Sunbeam",
+    "name_ar": "صن بيم",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/sunbeam.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 274,
+    "name_en": "Talbot",
+    "name_ar": "تالبوت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/talbot.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 275,
+    "name_en": "Tatra",
+    "name_ar": "تاترا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tatra.png",
+    "country": "Czech Republic",
+    "country_ar": "التشيك"
+  },
+  {
+    "id": 276,
+    "name_en": "Tauro",
+    "name_ar": "تورو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tauro.png",
+    "country": "Spain",
+    "country_ar": "إسبانيا"
+  },
+  {
+    "id": 277,
+    "name_en": "TechArt",
+    "name_ar": "تك آرت",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/techart.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 278,
+    "name_en": "Tiger",
+    "name_ar": "تايجر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tiger.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 279,
+    "name_en": "Troller",
+    "name_ar": "ترولر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/troller.png",
+    "country": "Brazil",
+    "country_ar": "البرازيل"
+  },
+  {
+    "id": 280,
+    "name_en": "TRUMPCHI",
+    "name_ar": "ترامبتشي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/trumpchi.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 281,
+    "name_en": "Tushek",
+    "name_ar": "توشيك",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tushek.png",
+    "country": "Slovenia",
+    "country_ar": "سلوفينيا"
+  },
+  {
+    "id": 282,
+    "name_en": "TVR",
+    "name_ar": "تي في آر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/tvr.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 283,
+    "name_en": "Ultima",
+    "name_ar": "ألتيما",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/ultima.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 284,
+    "name_en": "Vector",
+    "name_ar": "فيكتور",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/vector.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 285,
+    "name_en": "Vega",
+    "name_ar": "فيجا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/vega.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 286,
+    "name_en": "Venirauto",
+    "name_ar": "فينيرأوتو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/venirauto.png",
+    "country": "Venezuela",
+    "country_ar": "فنزويلا"
+  },
+  {
+    "id": 287,
+    "name_en": "Venturi",
+    "name_ar": "فينتوري",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/venturi.png",
+    "country": "France",
+    "country_ar": "فرنسا"
+  },
+  {
+    "id": 288,
+    "name_en": "Venucia",
+    "name_ar": "فينوتشيا",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/venucia.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 289,
+    "name_en": "Vencer",
+    "name_ar": "فينسر",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/vencer.png",
+    "country": "Netherlands",
+    "country_ar": "هولندا"
+  },
+  {
+    "id": 290,
+    "name_en": "Vignale",
+    "name_ar": "فينيالي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/vignale.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 291,
+    "name_en": "W Motors",
+    "name_ar": "دبليو موتورز",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/w-motors.png",
+    "country": "Lebanon",
+    "country_ar": "لبنان"
+  },
+  {
+    "id": 292,
+    "name_en": "Wanderer",
+    "name_ar": "فاندرير",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/wanderer.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 293,
+    "name_en": "Wiesmann",
+    "name_ar": "فيزمان",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/wiesmann.png",
+    "country": "Germany",
+    "country_ar": "ألمانيا"
+  },
+  {
+    "id": 294,
+    "name_en": "Willys",
+    "name_ar": "ويليس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/willys.png",
+    "country": "USA",
+    "country_ar": "الولايات المتحدة"
+  },
+  {
+    "id": 295,
+    "name_en": "Wolseley",
+    "name_ar": "وولسيلي",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/wolseley.png",
+    "country": "UK",
+    "country_ar": "المملكة المتحدة"
+  },
+  {
+    "id": 296,
+    "name_en": "Wuling",
+    "name_ar": "وولينغ",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/wuling.png",
+    "country": "China",
+    "country_ar": "الصين"
+  },
+  {
+    "id": 297,
+    "name_en": "Yulon",
+    "name_ar": "يولون",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/yulon.png",
+    "country": "Taiwan",
+    "country_ar": "تايوان"
+  },
+  {
+    "id": 298,
+    "name_en": "ZAGATO",
+    "name_ar": "زاغاتو",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/zagato.png",
+    "country": "Italy",
+    "country_ar": "إيطاليا"
+  },
+  {
+    "id": 299,
+    "name_en": "Zaporozhets",
+    "name_ar": "زاوبوروجيتس",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/zaporozhets.png",
+    "country": "Ukraine",
+    "country_ar": "أوكرانيا"
+  },
+  {
+    "id": 300,
+    "name_en": "Zibar",
+    "name_ar": "زيبار",
+    "logo_url": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/thumb/zibar.png",
+    "country": "Turkey",
+    "country_ar": "تركيا"
+  }
+]

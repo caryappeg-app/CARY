@@ -1,0 +1,8 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      { "appID": "TEAMID.com.example.caryApp", "paths": ["/car/*"] }
+    ]
+  }
+}

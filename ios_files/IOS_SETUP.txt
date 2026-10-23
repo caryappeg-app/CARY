@@ -1,0 +1,16 @@
+1) ios/Runner/Info.plist — ضيف جوه <dict> الرئيسي:
+
+<key>FlutterDeepLinkingEnabled</key>
+<false/>
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLName</key><string>cary</string>
+    <key>CFBundleURLSchemes</key>
+    <array><string>cary</string></array>
+  </dict>
+</array>
+
+2) (اختياري - رابط https على iPhone) في Xcode: Runner > Signing & Capabilities >
+   + Capability > Associated Domains، وضيف:  applinks:cary.mohammed58r884.workers.dev
+   وغيّر TEAMID في cloudflare_site/.well-known/apple-app-site-association.

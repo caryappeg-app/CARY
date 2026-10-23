@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سيارة على CARY</title>
+<meta property="og:title" content="شوف العربية دي على CARY">
+<meta property="og:description" content="افتح الإعلان في تطبيق CARY">
+<style>
+body{font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#f5f7fb;color:#12213f}
+.c{text-align:center;padding:24px;max-width:380px}h1{font-size:40px;margin:0 0 8px;color:#0047cc}
+a.b{display:block;margin:12px 0;padding:14px;border-radius:12px;background:#0047cc;color:#fff;text-decoration:none;font-weight:700}
+a.s{background:#fff;color:#0047cc;border:1px solid #0047cc}
+</style></head>
+<body><div class="c">
+<h1>CARY</h1>
+<p>لو التطبيق متسطّب عندك هيتفتح الإعلان تلقائياً.</p>
+<a class="b" id="open" href="#">افتح في التطبيق</a>
+<!-- حط لينك التطبيق على المتجر بعد النشر -->
+<a class="b s" id="store" href="https://play.google.com/store/apps/details?id=com.example.cary_app">حمّل التطبيق</a>
+</div>
+<script>
+  var id = decodeURIComponent(location.pathname.split('/').filter(Boolean)[1] || '');
+  var link = 'cary://car/' + encodeURIComponent(id);
+  document.getElementById('open').href = link;
+  // محاولة فتح تلقائية (لو App Links مش متفعّلة)
+  if (id && /Android|iPhone|iPad/i.test(navigator.userAgent)) {
+    setTimeout(function(){ location.href = link; }, 400);
+  }
+</script></body></html>
