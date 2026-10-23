@@ -41,7 +41,18 @@ jobs:
 
       - name: Build Web
         run: |
-          flutter build web --release --base-href "/${{ github.event.repository.name }}/"
+          cat << 'EOF' > env.json
+          {
+            "USE_MOCK_DATA": "false",
+            "API_BASE_URL": "https://qjlwtitcwsqnhcfrxdcv.supabase.co",
+            "OTP_LENGTH": "8",
+            "API_KEY": "sb_publishable_5LROCXppE2KzzBEztpYYew_ZeJvueOs",
+            "SUPPORT_WHATSAPP": "01201082852",
+            "SHARE_LINK_BASE": "https://cary.cary-egcom.workers.dev",
+            "ADS_WORKER_URL": "https://cary-ads-api.cary-app-eg.workers.dev"
+          }
+          EOF
+          flutter build web --release --dart-define-from-file=env.json --base-href "/${{ github.event.repository.name }}/"
           cp build/web/index.html build/web/404.html
 
       - name: Setup Pages

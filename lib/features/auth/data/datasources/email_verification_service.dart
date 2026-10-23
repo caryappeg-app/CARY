@@ -35,7 +35,7 @@ abstract class EmailVerificationService {
 class MockEmailVerification implements EmailVerificationService {
   const MockEmailVerification();
   @override
-  int get codeLength => 4;
+  int get codeLength => AppConfig.otpLength;
   @override
   Future<void> sendCode(String email, {bool resend = false}) =>
       Future<void>.delayed(const Duration(seconds: 1));
