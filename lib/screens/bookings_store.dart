@@ -483,6 +483,31 @@ class BookingsAdminStore extends ChangeNotifier {
       }());
     }
   }
+
+  /// حذف حجز فاشل نهائياً (متاح للمالك فقط)
+  Future<bool> deleteFailedBooking(String id) async {
+    final i = _items.indexWhere(
+        (b) => b.id == id && b.status == ManagedBookingStatus.failed);
+    if (i == -1) return false;
+    _items.removeAt(i);
+    notifyListeners();
+
+    if (_remote) {
+      unawaited(() async {
+        try {
+          final client = Injector.instance.apiClient;
+          await client.delete('/rest/v1/bookings?id=eq.$id');
+        } catch (e) {
+          debugPrint('BookingsAdminStore.deleteFailedBooking direct error: $e');
+          try {
+            final client = Injector.instance.apiClient;
+            await client.post('/rest/v1/rpc/delete_booking', body: {'p_id': id});
+          } catch (_) {}
+        }
+      }());
+    }
+    return true;
+  }
 }
 
 /// بيانات صاحب الإعلان (البائع)

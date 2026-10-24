@@ -8,6 +8,8 @@ abstract class ApiClient {
       {Object? body, Map<String, String>? headers});
   Future<dynamic> put(String path,
       {Object? body, Map<String, String>? headers});
+  Future<dynamic> delete(String path,
+      {Object? body, Map<String, String>? headers});
 }
 
 /// بيجدد التوكن لما ينتهي (بيتنفذ في الـ Data layer بتاع الـ Auth لاحقًا)

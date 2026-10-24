@@ -78,6 +78,12 @@ class DioApiClient implements ApiClient {
       _guard(() => _dio.put<dynamic>(path,
           data: body, options: Options(headers: headers)));
 
+  @override
+  Future<dynamic> delete(String path,
+          {Object? body, Map<String, String>? headers}) =>
+      _guard(() => _dio.delete<dynamic>(path,
+          data: body, options: Options(headers: headers)));
+
   Future<dynamic> _guard(Future<Response<dynamic>> Function() call) async {
     try {
       return (await call()).data;

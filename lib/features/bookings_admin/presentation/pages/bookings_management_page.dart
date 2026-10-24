@@ -4,6 +4,7 @@
 // تفاصيل الحجز: تفاصيل السيارة + بيانات البائع والمشتري (+ السعر المعروض والمطلوب لو فيه تفاوض).
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../core/utils/date_format.dart';
@@ -11,7 +12,22 @@ import '../../../../core/utils/formatters.dart' show formatNumber;
 import '../../../../core/widgets/admin_search_field.dart';
 import '../../../../core/widgets/date_info_row.dart';
 import '../../../../screens/bookings_store.dart';
+import '../../../account/domain/entities/user_profile.dart' show UserRole;
+import '../../../account/presentation/cubit/account_cubit.dart';
 import '../../../cars/presentation/widgets/car_card.dart' show CarImageView;
+
+bool _checkIsOwner(BuildContext context) {
+  try {
+    return context.select<AccountCubit, bool>(
+        (c) => c.state.profile?.role == UserRole.owner);
+  } catch (_) {
+    try {
+      return context.read<AccountCubit>().state.profile?.role == UserRole.owner;
+    } catch (_) {
+      return false;
+    }
+  }
+}
 
 extension _StatusUi on ManagedBookingStatus {
   String get title => switch (this) {
@@ -62,9 +78,22 @@ AppBar _appBar(String title) => AppBar(
 class BookingsManagementPage extends StatefulWidget {
   const BookingsManagementPage({super.key});
 
-  static Future<void> open(BuildContext context) => Navigator.of(context).push(
-        MaterialPageRoute<void>(builder: (_) => const BookingsManagementPage()),
-      );
+  static Future<void> open(BuildContext context, {AccountCubit? accountCubit}) {
+    AccountCubit? account;
+    try {
+      account = accountCubit ?? context.read<AccountCubit>();
+    } catch (_) {}
+    return Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => account != null
+            ? BlocProvider<AccountCubit>.value(
+                value: account,
+                child: const BookingsManagementPage(),
+              )
+            : const BookingsManagementPage(),
+      ),
+    );
+  }
 
   @override
   State<BookingsManagementPage> createState() => _BookingsManagementPageState();
@@ -227,22 +256,99 @@ class _BookingsList extends StatelessWidget {
   }
 }
 
+Future<void> _confirmDeleteBookingDialog(
+    BuildContext context, ManagedBooking b, {VoidCallback? onDeleted}) async {
+  final ok = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      backgroundColor: AppColors.surface,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: Row(
+        children: [
+          Icon(Icons.warning_amber_rounded, color: AppColors.error, size: 28),
+          const SizedBox(width: 8),
+          const Text('حذف الحجز الفاشل',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
+        ],
+      ),
+      content: Text(
+        'هل أنت متأكد من حذف حجز سيارة "${b.car.title}" نهائياً من سجل العمليات الفاشلة؟ هذا الإجراء متاح للمالك فقط ولا يمكن التراجع عنه.',
+        style: TextStyle(fontSize: 14.5, color: AppColors.subtitle, height: 1.4),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(ctx).pop(false),
+          child: Text('إلغاء',
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.subtitle)),
+        ),
+        ElevatedButton(
+          onPressed: () => Navigator.of(ctx).pop(true),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.error,
+            foregroundColor: Colors.white,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+          child: const Text('حذف نهائي',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w800)),
+        ),
+      ],
+    ),
+  );
+  if (ok == true && context.mounted) {
+    final success = await BookingsAdminStore.instance.deleteFailedBooking(b.id);
+    if (context.mounted && success) {
+      onDeleted?.call();
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('تم حذف الحجز الفاشل بنجاح'),
+          backgroundColor: Colors.black87,
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
+  }
+}
+
 class _BookingCard extends StatelessWidget {
   final ManagedBooking booking;
   const _BookingCard({required this.booking});
 
+  void _openDetails(BuildContext context) {
+    AccountCubit? account;
+    try {
+      account = context.read<AccountCubit>();
+    } catch (_) {}
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => account != null
+            ? BlocProvider<AccountCubit>.value(
+                value: account,
+                child: BookingDetailsPage(bookingId: booking.id),
+              )
+            : BookingDetailsPage(bookingId: booking.id),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final car = booking.car;
+    final isOwner = _checkIsOwner(context);
+    final isFailed = booking.status == ManagedBookingStatus.failed;
+
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: booking.status.color.withOpacity(0.4)),
+        border: Border.all(color: booking.status.color.withValues(alpha: 0.4)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -297,28 +403,73 @@ class _BookingCard extends StatelessWidget {
                     color: AppColors.error,
                   ),
                 const SizedBox(height: 12),
-                SizedBox(
-                  height: 52,
-                  child: ElevatedButton.icon(
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) =>
-                            BookingDetailsPage(bookingId: booking.id),
+                if (isFailed && isOwner) ...[
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: SizedBox(
+                          height: 52,
+                          child: ElevatedButton.icon(
+                            onPressed: () => _openDetails(context),
+                            icon: const Icon(Icons.receipt_long_outlined, size: 21),
+                            label: const Text('تفاصيل الحجز',
+                                style: TextStyle(
+                                    fontSize: 15.5, fontWeight: FontWeight.w800)),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.blue,
+                              foregroundColor: Colors.white,
+                              elevation: 2,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        flex: 2,
+                        child: SizedBox(
+                          height: 52,
+                          child: ElevatedButton.icon(
+                            onPressed: () =>
+                                _confirmDeleteBookingDialog(context, booking),
+                            icon: const Icon(Icons.delete_outline_rounded,
+                                size: 20),
+                            label: const Text('حذف',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w800)),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.error,
+                              foregroundColor: Colors.white,
+                              elevation: 2,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ] else ...[
+                  SizedBox(
+                    height: 52,
+                    child: ElevatedButton.icon(
+                      onPressed: () => _openDetails(context),
+                      icon: const Icon(Icons.receipt_long_outlined, size: 22),
+                      label: const Text('تفاصيل الحجز',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w800)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.blue,
+                        foregroundColor: Colors.white,
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16)),
                       ),
                     ),
-                    icon: const Icon(Icons.receipt_long_outlined, size: 22),
-                    label: const Text('تفاصيل الحجز',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w800)),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.blue,
-                      foregroundColor: Colors.white,
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)),
-                    ),
                   ),
-                ),
+                ],
               ],
             ),
           ),
@@ -396,7 +547,7 @@ class BookingDetailsPage extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
-            color: b.status.color.withOpacity(0.12),
+            color: b.status.color.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -508,6 +659,34 @@ class BookingDetailsPage extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ],
+
+        // حذف الحجز الفاشل (متاح للمالك فقط)
+        if (b.status == ManagedBookingStatus.failed && _checkIsOwner(context)) ...[
+          const SizedBox(height: 18),
+          SizedBox(
+            height: 52,
+            child: ElevatedButton.icon(
+              onPressed: () => _confirmDeleteBookingDialog(
+                context,
+                b,
+                onDeleted: () => Navigator.of(context).pop(),
+              ),
+              icon: const Icon(Icons.delete_outline_rounded, size: 22),
+              label: const Text(
+                'حذف الحجز الفاشل نهائياً',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.error,
+                foregroundColor: Colors.white,
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
           ),
         ],
       ],

@@ -182,7 +182,8 @@ class AccountTab extends StatelessWidget {
                             icon: Icons.event_note_outlined,
                             title: 'إدارة الحجوزات',
                             subtitle: 'الحجوزات النشطة والعمليات الناجحة والفاشلة',
-                            onTap: () => BookingsManagementPage.open(context),
+                            onTap: () => BookingsManagementPage.open(context,
+                                accountCubit: context.read<AccountCubit>()),
                           ),
                           const SizedBox(height: 14),
                           _ActionTile(
