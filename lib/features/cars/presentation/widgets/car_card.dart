@@ -3,7 +3,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/app_colors.dart';
-import '../../../../constants/theme_controller.dart';
 import '../../../../core/utils/formatters.dart';
 import '../../../../core/widgets/cross_file_image.dart';
 import '../../domain/entities/car.dart';
@@ -40,13 +39,13 @@ class CarCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: AppColors.surface,
-        borderRadius: BorderRadius.circular(26),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: AppColors.tone(0xFFEDF1F6)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
-            blurRadius: 18,
-            offset: const Offset(0, 6),
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 14,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -55,18 +54,18 @@ class CarCard extends StatelessWidget {
         children: [
           _buildImage(),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+            padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 _buildHeader(),
                 if (offerPrice != null) ...[
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   _buildOffer(offerPrice!),
                 ],
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
                 _buildSpecs(),
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
                 _buildActions(),
               ],
             ),
@@ -80,7 +79,7 @@ class CarCard extends StatelessWidget {
   // ---------------------------------------------------------------- image
   Widget _buildImage() {
     return AspectRatio(
-      aspectRatio: 1.75,
+      aspectRatio: 2.1,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -94,20 +93,20 @@ class CarCard extends StatelessWidget {
           if (!available)
             Positioned.fill(
               child: Container(
-                color: Colors.black.withOpacity(0.55),
+                color: Colors.black.withValues(alpha: 0.55),
                 alignment: Alignment.center,
                 child: Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(
                     color: AppColors.error,
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Text(
                     'غير متاحة',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
@@ -116,18 +115,18 @@ class CarCard extends StatelessWidget {
             ),
           if (car.approvedPrice)
             Positioned(
-              top: 14,
-              left: 14,
+              top: 10,
+              left: 10,
               child: Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
                 decoration: BoxDecoration(
                   color: AppColors.surface,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.10),
-                      blurRadius: 8,
+                      color: Colors.black.withValues(alpha: 0.10),
+                      blurRadius: 6,
                       offset: const Offset(0, 2),
                     ),
                   ],
@@ -135,7 +134,7 @@ class CarCard extends StatelessWidget {
                 child: Text(
                   'سعر نهائي معتمد',
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: FontWeight.w800,
                     color: AppColors.title,
                   ),
@@ -145,18 +144,18 @@ class CarCard extends StatelessWidget {
           // ✅ نفس شكل شارة "سعر نهائي معتمد" لكن للسيارات القابلة للتفاوض
           if (car.canNegotiate)
             Positioned(
-              top: 14,
-              left: 14,
+              top: 10,
+              left: 10,
               child: Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
                 decoration: BoxDecoration(
                   color: AppColors.surface,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.10),
-                      blurRadius: 8,
+                      color: Colors.black.withValues(alpha: 0.10),
+                      blurRadius: 6,
                       offset: const Offset(0, 2),
                     ),
                   ],
@@ -164,7 +163,7 @@ class CarCard extends StatelessWidget {
                 child: Text(
                   'قابل للتفاوض',
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: FontWeight.w800,
                     color: AppColors.title,
                   ),
@@ -172,26 +171,26 @@ class CarCard extends StatelessWidget {
               ),
             ),
           Positioned(
-            bottom: 14,
-            left: 14,
+            bottom: 10,
+            left: 10,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.62),
-                borderRadius: BorderRadius.circular(12),
+                color: Colors.black.withValues(alpha: 0.62),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Icon(Icons.photo_camera_outlined,
-                      color: Colors.white, size: 22),
-                  const SizedBox(width: 8),
+                      color: Colors.white, size: 18),
+                  const SizedBox(width: 6),
                   Text(
                     '1/${car.imagesCount}',
                     textDirection: TextDirection.ltr,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 14,
+                      fontSize: 12.5,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -208,19 +207,19 @@ class CarCard extends StatelessWidget {
   /// السعر اللي المستخدم كتبه في "قدم عرض سعرك"
   Widget _buildOffer(int offer) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: AppColors.tileBg,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
         children: [
-          Icon(Icons.local_offer_outlined, color: AppColors.blue, size: 22),
-          const SizedBox(width: 8),
+          Icon(Icons.local_offer_outlined, color: AppColors.blue, size: 19),
+          const SizedBox(width: 6),
           Text(
             'عرضك المقدم',
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 13,
               fontWeight: FontWeight.w700,
               color: AppColors.subtitle,
             ),
@@ -229,7 +228,7 @@ class CarCard extends StatelessWidget {
           Text(
             '${formatNumber(offer)} ج.م',
             style: TextStyle(
-              fontSize: 17,
+              fontSize: 15.5,
               fontWeight: FontWeight.w800,
               color: AppColors.blue,
             ),
@@ -251,22 +250,22 @@ class CarCard extends StatelessWidget {
             Text(
               formatNumber(car.price),
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 21,
                 fontWeight: FontWeight.w800,
                 color: AppColors.blue,
               ),
             ),
             Text(
               'جنيه مصري',
-              style: TextStyle(fontSize: 13, color: AppColors.subtitle),
+              style: TextStyle(fontSize: 12, color: AppColors.subtitle),
             ),
           ],
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 8),
         // لوجو الماركة
         Container(
-          width: 52,
-          height: 52,
+          width: 44,
+          height: 44,
           margin: const EdgeInsets.only(top: 2),
           decoration: BoxDecoration(
             color: Colors.white, // خلفية اللوجو بيضا حتى في الوضع الداكن
@@ -274,15 +273,15 @@ class CarCard extends StatelessWidget {
             border: Border.all(color: AppColors.tone(0xFFE8ECF2)),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
-                blurRadius: 6,
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 5,
                 offset: const Offset(0, 2),
               ),
             ],
           ),
           child: ClipOval(child: BrandLogo(brandName: car.brand)),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 8),
         // الاسم والتفاصيل
         Expanded(
           child: Column(
@@ -293,16 +292,16 @@ class CarCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontSize: 17,
-                  height: 1.3,
+                  fontSize: 15.5,
+                  height: 1.25,
                   fontWeight: FontWeight.w800,
                   color: AppColors.title,
                 ),
               ),
-              const SizedBox(height: 4),
+              const SizedBox(height: 3),
               Text(
                 car.subtitle,
-                style: TextStyle(fontSize: 14, color: AppColors.subtitle),
+                style: TextStyle(fontSize: 13, color: AppColors.subtitle),
               ),
             ],
           ),
@@ -322,7 +321,7 @@ class CarCard extends StatelessWidget {
             label: 'سنة الصنع',
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 8),
         Expanded(
           child: _SpecTile(
             icon: Icons.settings_outlined,
@@ -330,7 +329,7 @@ class CarCard extends StatelessWidget {
             label: 'ناقل الحركة',
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 8),
         Expanded(
           child: _SpecTile(
             icon: Icons.speed_rounded,
@@ -348,29 +347,29 @@ class CarCard extends StatelessWidget {
       children: [
         Expanded(
           child: SizedBox(
-            height: 58,
+            height: 48,
             child: ElevatedButton(
               onPressed: available ? onDetails : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.blue,
                 foregroundColor: Colors.white,
-                elevation: 4,
-                shadowColor: AppColors.blue.withOpacity(0.35),
+                elevation: 3,
+                shadowColor: AppColors.blue.withValues(alpha: 0.3),
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18)),
+                    borderRadius: BorderRadius.circular(15)),
               ),
               child: const FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.visibility_outlined, size: 26),
-                    SizedBox(width: 10),
+                    Icon(Icons.visibility_outlined, size: 21),
+                    SizedBox(width: 8),
                     Text(
                       'عرض التفاصيل وحجز السيارة',
                       style:
-                      TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
                     ),
                   ],
                 ),
@@ -379,38 +378,38 @@ class CarCard extends StatelessWidget {
           ),
         ),
         if (onDelete != null) ...[
-          const SizedBox(width: 10),
+          const SizedBox(width: 8),
           Material(
             color: AppColors.errorBg,
-            borderRadius: BorderRadius.circular(18),
+            borderRadius: BorderRadius.circular(15),
             child: InkWell(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(15),
               onTap: onDelete,
               child: SizedBox(
-                width: 62,
-                height: 58,
+                width: 48,
+                height: 48,
                 child: Icon(Icons.delete_outline_rounded,
-                    size: 28, color: AppColors.error),
+                    size: 24, color: AppColors.error),
               ),
             ),
           ),
         ],
-        const SizedBox(width: 10),
+        const SizedBox(width: 8),
         Material(
           color: AppColors.tileBg,
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(15),
           child: InkWell(
-            borderRadius: BorderRadius.circular(18),
+            borderRadius: BorderRadius.circular(15),
             onTap: onFavorite,
             child: SizedBox(
-              width: 62,
-              height: 58,
+              width: 48,
+              height: 48,
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
                 child: Icon(
                   isFavorite ? Icons.favorite : Icons.favorite_border,
                   key: ValueKey(isFavorite),
-                  size: 28,
+                  size: 24,
                   color: isFavorite ? AppColors.badge : AppColors.subtitle,
                 ),
               ),
@@ -511,7 +510,7 @@ class _BrandLogoState extends State<BrandLogo> {
         final url = snap.data?.logoUrl ?? '';
         if (url.isEmpty) return _fallback;
         return Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(7),
           child: Image.network(
             url,
             fit: BoxFit.contain,
@@ -537,33 +536,33 @@ class _SpecTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
       decoration: BoxDecoration(
         color: AppColors.tileBg,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(14),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: AppColors.blue, size: 28),
-          const SizedBox(height: 8),
+          Icon(icon, color: AppColors.blue, size: 20),
+          const SizedBox(height: 4),
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
               value,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 13,
                 fontWeight: FontWeight.w800,
                 color: AppColors.title,
               ),
             ),
           ),
-          const SizedBox(height: 2),
+          const SizedBox(height: 1),
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
               label,
-              style: TextStyle(fontSize: 12.5, color: AppColors.subtitle),
+              style: TextStyle(fontSize: 11, color: AppColors.subtitle),
             ),
           ),
         ],

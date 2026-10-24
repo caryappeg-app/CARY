@@ -13,8 +13,8 @@ class DesktopResponsiveWrapper extends StatelessWidget {
   const DesktopResponsiveWrapper({super.key, required this.child});
 
   /// العرض الأقصى لإطار الموبايل على شاشات الكمبيوتر
-  static const double maxMobileWidth = 500.0;
-  static const double desktopBreakpoint = 520.0;
+  static const double maxMobileWidth = 430.0;
+  static const double desktopBreakpoint = 450.0;
 
   @override
   Widget build(BuildContext context) {
