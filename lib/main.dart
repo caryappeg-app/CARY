@@ -1,3 +1,4 @@
+import 'dart:ui' show PointerDeviceKind;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'constants/theme_controller.dart';
 import 'core/deeplink/deep_link_service.dart';
 import 'core/di/injection.dart';
 import 'core/push/notification_router.dart';
+import 'core/widgets/desktop_responsive_wrapper.dart';
 import 'features/auth/presentation/cubit/auth_cubit.dart';
 import 'features/notifications/presentation/cubit/notifications_cubit.dart';
 import 'features/auth/presentation/cubit/auth_state.dart';
@@ -75,6 +77,14 @@ class CaryApp extends StatelessWidget {
           title: 'CARY',
           // اللغة العربية + اتجاه من اليمين لليسار
           locale: const Locale('ar', 'EG'),
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.touch,
+              PointerDeviceKind.trackpad,
+              PointerDeviceKind.stylus,
+            },
+          ),
           builder: (context, child) => MultiBlocListener(
             listeners: [
               // انتهاء الجلسة أثناء الاستخدام (فشل Refresh) => رجوع لتسجيل الدخول
@@ -95,7 +105,13 @@ class CaryApp extends StatelessWidget {
               ),
             ],
             child: Directionality(
-                textDirection: TextDirection.rtl, child: child!),
+              textDirection: TextDirection.rtl,
+              child: DesktopResponsiveWrapper(
+                child: ScaffoldMessenger(
+                  child: child!,
+                ),
+              ),
+            ),
           ),
           theme: _theme(ThemeController.instance.isDark),
           home: const SplashScreen(),
