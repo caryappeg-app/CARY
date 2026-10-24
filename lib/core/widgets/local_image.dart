@@ -1,5 +1,4 @@
-// صورة من أي مصدر: assets / رابط (http, https, blob) / ملف على الجهاز.
-// على الويب مفيش ملفات محلية، فبنستخدم Image.network (روابط blob من الـ picker).
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
@@ -21,12 +20,41 @@ class LocalImage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget broken(BuildContext _, Object __, StackTrace? ___) => fallback;
 
-    if (path.startsWith('assets/')) {
-      return Image.asset(path, fit: fit, errorBuilder: broken);
+    final trimmed = path.trim();
+    if (trimmed.isEmpty) return fallback;
+
+    if (trimmed.startsWith('assets/')) {
+      return Image.asset(trimmed, fit: fit, errorBuilder: broken);
     }
-    if (kIsWeb || path.startsWith('http') || path.startsWith('blob:')) {
-      return Image.network(path, fit: fit, errorBuilder: broken);
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+      return CachedNetworkImage(
+        imageUrl: trimmed,
+        fit: fit,
+        placeholder: (_, __) => fallback,
+        errorWidget: (_, __, ___) => fallback,
+      );
     }
-    return fileImageWidget(path, fit: fit, errorBuilder: broken);
+    if (trimmed.startsWith('blob:')) {
+      return Image.network(trimmed, fit: fit, errorBuilder: broken);
+    }
+    // مسار ملف محلي على الهاتف (مثلاً: /data/user/0/... أو C:\...)
+    if (trimmed.startsWith('/') || trimmed.contains(':\\')) {
+      if (kIsWeb) {
+        // على الويب لا يمكن قراءة ملفات جهاز المستخدم، بنجرّب اسم الملف في الأصول كبديل
+        final name = trimmed.split(RegExp(r'[/\\]')).last;
+        return Image.asset(
+          'assets/images/$name',
+          fit: fit,
+          errorBuilder: (_, __, ___) => fallback,
+        );
+      }
+      return fileImageWidget(trimmed, fit: fit, errorBuilder: broken);
+    }
+    // اسم ملف عادي بدون مسار مثلاً: "camry.png"
+    return Image.asset(
+      trimmed.contains('/') ? trimmed : 'assets/images/$trimmed',
+      fit: fit,
+      errorBuilder: (_, __, ___) => fallback,
+    );
   }
 }

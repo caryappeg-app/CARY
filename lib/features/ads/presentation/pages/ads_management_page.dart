@@ -90,6 +90,12 @@ class _AdsManagementPageState extends State<AdsManagementPage> {
       };
 
   @override
+  void initState() {
+    super.initState();
+    _store.loadFromServer(force: true);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: _tabs.length,
@@ -183,34 +189,45 @@ class _AdsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (ads.isEmpty) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.inbox_outlined, size: 64, color: AppColors.icon),
-              const SizedBox(height: 12),
-              Text(
-                _empty,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.subtitle,
+    return RefreshIndicator(
+      onRefresh: () => AdsStore.instance.loadFromServer(force: true),
+      child: ads.isEmpty
+          ? SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.6,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(32),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.inbox_outlined,
+                            size: 64, color: AppColors.icon),
+                        const SizedBox(height: 12),
+                        Text(
+                          _empty,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.subtitle,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ],
-          ),
-        ),
-      );
-    }
-    return ListView.separated(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-      itemCount: ads.length,
-      separatorBuilder: (_, __) => const SizedBox(height: 14),
-      itemBuilder: (_, i) =>
-          _ManagedAdCard(key: ValueKey('${ads[i].id}|${ads[i].deletionReason}'), ad: ads[i]),
+            )
+          : ListView.separated(
+              physics: const AlwaysScrollableScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+              itemCount: ads.length,
+              separatorBuilder: (_, __) => const SizedBox(height: 14),
+              itemBuilder: (_, i) => _ManagedAdCard(
+                  key: ValueKey('${ads[i].id}|${ads[i].deletionReason}'),
+                  ad: ads[i]),
+            ),
     );
   }
 }
