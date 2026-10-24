@@ -143,14 +143,19 @@ class _HomeScreenState extends State<HomeScreen> {
     _store.lastError.addListener(_onStoreError);
     NotificationRouter.instance.attach(_openForNotification);
     if (AppConfig.useBackend) {
-      // إعلاناتي (أو كل الإعلانات للمالك/الأدمن) من السيرفر + تحديث كل 30 ثانية
+      // إعلاناتي (أو كل الإعلانات للمالك/الأدمن) من السيرفر + تحديث دوري
       _store.loadFromServer();
-      // الفحص الدوري خفيف (نسخة الإعلانات فقط)، والقايمة كاملة بتتسحب بس لو اتغيّرت
-      _adsTimer = Timer.periodic(
-          const Duration(seconds: 20), (_) => _store.loadFromServer());
-      // أي إشعار جديد (إعلان جديد / حجز / قبول...) => نحدّث الإعلانات فورًا بدل ما نستنى الدورة
-      _notifSub = Injector.instance.notificationsRepository.published
-          .listen((_) => _store.loadFromServer());
+      BookingsAdminStore.instance.loadFromServer();
+      // الفحص الدوري خفيف
+      _adsTimer = Timer.periodic(const Duration(seconds: 20), (_) {
+        _store.loadFromServer();
+        BookingsAdminStore.instance.loadFromServer();
+      });
+      // أي إشعار جديد (إعلان جديد / حجز / قبول...) => نحدّث فورًا
+      _notifSub = Injector.instance.notificationsRepository.published.listen((_) {
+        _store.loadFromServer();
+        BookingsAdminStore.instance.loadFromServer();
+      });
     }
     BookingsAdminStore.instance.addListener(_onBookingsAdmin);
     // أي سيارة بتظهر في الصفحة الرئيسية = "تم المراجعة" في إدارة الإعلانات

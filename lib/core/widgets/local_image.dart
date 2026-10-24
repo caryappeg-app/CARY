@@ -26,9 +26,20 @@ class LocalImage extends StatelessWidget {
     if (trimmed.startsWith('assets/')) {
       return Image.asset(trimmed, fit: fit, errorBuilder: broken);
     }
-    if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    final safeUrl = trimmed.startsWith('http://')
+        ? 'https://${trimmed.substring(7)}'
+        : trimmed;
+
+    if (safeUrl.startsWith('http://') || safeUrl.startsWith('https://')) {
+      if (kIsWeb) {
+        return Image.network(
+          safeUrl,
+          fit: fit,
+          errorBuilder: broken,
+        );
+      }
       return CachedNetworkImage(
-        imageUrl: trimmed,
+        imageUrl: safeUrl,
         fit: fit,
         placeholder: (_, __) => fallback,
         errorWidget: (_, __, ___) => fallback,

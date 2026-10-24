@@ -432,14 +432,18 @@ class CarImageView extends StatelessWidget {
       {super.key, required this.car, this.fit = BoxFit.cover, this.path});
 
   List<String> get _candidates {
-    final img = path ?? car.image;
-    final name = img.split('/').last;
-    return {img, 'assets/images/$name', 'assets/$name'}.toList();
+    final raw = (path != null && path!.trim().isNotEmpty)
+        ? path!.trim()
+        : (car.image.trim().isNotEmpty
+            ? car.image.trim()
+            : (car.allImages.isNotEmpty ? car.allImages.first.trim() : ''));
+    if (raw.isEmpty) return const [];
+    final name = raw.split('/').last;
+    return {raw, 'assets/images/$name', 'assets/$name'}.toList();
   }
 
   Widget _build(List<String> candidates, int index) {
-    if (index >= candidates.length) {
-      debugPrint('CarImageView: الصورة مش لاقيها في: $candidates');
+    if (index >= candidates.length || candidates.isEmpty) {
       return Container(
         color: AppColors.tone(0xFFE5EAF2),
         alignment: Alignment.center,
@@ -447,10 +451,27 @@ class CarImageView extends StatelessWidget {
             size: 64, color: AppColors.icon),
       );
     }
-    final path = candidates[index];
+    final rawPath = candidates[index];
+    final path = rawPath.startsWith('http://')
+        ? 'https://${rawPath.substring(7)}'
+        : rawPath;
     Widget next(Object _, StackTrace? __) => _build(candidates, index + 1);
-    if (path.startsWith('http')) {
-      // كاش على الذاكرة والتخزين: الصورة بتتحمّل مرة واحدة بس، وبتتفك بحجم الشاشة
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      if (kIsWeb) {
+        // على الويب Image.network بتتفادى قيود CORS لطلبات XHR في Cloudflare R2
+        return Image.network(
+          path,
+          fit: fit,
+          loadingBuilder: (context, child, progress) {
+            if (progress == null) return child;
+            return const Center(
+              child: CircularProgressIndicator(strokeWidth: 2.6),
+            );
+          },
+          errorBuilder: (c, e, s) => next(e, s),
+        );
+      }
+      // كاش على الذاكرة والتخزين للأجهزة المحمولة وسطح المكتب
       return CachedNetworkImage(
         imageUrl: path,
         fit: fit,

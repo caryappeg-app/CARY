@@ -65,7 +65,11 @@ class Car {
   });
 
   /// الصور اللي بتتعرض في الشاشة (الأولى هي الرئيسية)
-  List<String> get allImages => images.isNotEmpty ? images : [image];
+  List<String> get allImages {
+    if (images.isNotEmpty) return images;
+    if (image.isNotEmpty) return [image];
+    return const [];
+  }
 
   /// التفاوض متاح بس لو السيارة قابلة للتفاوض وسعرها مش "نهائي معتمد"
   bool get canNegotiate => negotiable && !approvedPrice;

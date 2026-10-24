@@ -11,7 +11,6 @@ import '../../../../core/utils/formatters.dart' show formatNumber;
 import '../../../../core/widgets/admin_search_field.dart';
 import '../../../../core/widgets/date_info_row.dart';
 import '../../../../screens/bookings_store.dart';
-import '../../../cars/domain/entities/car.dart';
 import '../../../cars/presentation/widgets/car_card.dart' show CarImageView;
 
 extension _StatusUi on ManagedBookingStatus {
@@ -74,6 +73,14 @@ class BookingsManagementPage extends StatefulWidget {
 class _BookingsManagementPageState extends State<BookingsManagementPage> {
   String _query = '';
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BookingsAdminStore.instance.loadFromServer(force: true);
+    });
+  }
+
   /// البحث: رقم الهاتف / الاسم / الجيميل (مشتري أو بائع) / اسم السيارة
   bool _match(ManagedBooking b) => matchesQuery(_query, [
         b.buyerPhone,
@@ -109,6 +116,14 @@ class _BookingsManagementPageState extends State<BookingsManagementPage> {
               color: AppColors.title,
             ),
           ),
+          actions: [
+            IconButton(
+              tooltip: 'تحديث الحجوزات',
+              icon: const Icon(Icons.refresh),
+              onPressed: () =>
+                  BookingsAdminStore.instance.loadFromServer(force: true),
+            ),
+          ],
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48),
             child: ListenableBuilder(
@@ -170,29 +185,42 @@ class _BookingsList extends StatelessWidget {
       builder: (context, _) {
         final items = store.byStatus(status).where(filter).toList();
         if (items.isEmpty) {
-          return Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+          return RefreshIndicator(
+            onRefresh: () => store.loadFromServer(force: true),
+            child: ListView(
+              physics: const AlwaysScrollableScrollPhysics(),
               children: [
-                Icon(Icons.inbox_outlined, size: 64, color: AppColors.icon),
-                const SizedBox(height: 12),
-                Text(
-                  searching ? 'مفيش نتائج مطابقة للبحث' : status.empty,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.subtitle,
+                SizedBox(height: MediaQuery.of(context).size.height * 0.22),
+                Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.inbox_outlined, size: 64, color: AppColors.icon),
+                      const SizedBox(height: 12),
+                      Text(
+                        searching ? 'مفيش نتائج مطابقة للبحث' : status.empty,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.subtitle,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           );
         }
-        return ListView.separated(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-          itemCount: items.length,
-          separatorBuilder: (_, __) => const SizedBox(height: 14),
-          itemBuilder: (_, i) => _BookingCard(booking: items[i]),
+        return RefreshIndicator(
+          onRefresh: () => store.loadFromServer(force: true),
+          child: ListView.separated(
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+            itemCount: items.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 14),
+            itemBuilder: (_, i) => _BookingCard(booking: items[i]),
+          ),
         );
       },
     );

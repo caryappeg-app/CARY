@@ -32,14 +32,18 @@ class InputSanitizer {
       .replaceAll('%', r'\%')
       .replaceAll('_', r'\_');
 
-  /// مسار صورة آمن: assets أو https بس (بيرفض javascript: / file: / http: ويقبل مسار ملف محلي مطلق)
+  /// مسار صورة آمن: assets أو https (ترقية http تلقائياً) أو روابط blob أو مسارات محلية
   static String safeImageRef(Object? input) {
-    final s = (input ?? '').toString().trim();
+    var s = (input ?? '').toString().trim();
+    if (s.isEmpty) return '';
+    if (s.startsWith('http://')) {
+      s = 'https://${s.substring(7)}';
+    }
     if (s.startsWith('assets/') || s.startsWith('https://')) return s;
     // رابط صورة مؤقت من الـ picker على الويب
     if (s.startsWith('blob:')) return s;
     // مسار صورة على الجهاز (صور إعلانات المستخدم): مطلق ومن غير '..'
-    if (s.startsWith('/') && !s.contains('..')) return s;
+    if ((s.startsWith('/') || s.contains(':\\')) && !s.contains('..')) return s;
     return '';
   }
 

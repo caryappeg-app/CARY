@@ -49,6 +49,16 @@ class CarModel {
   /// Mapper: Model -> Entity
   Car toEntity() {
     final j = _json;
+    final parsedImages = [
+      for (final i in (j['images'] as List? ?? const []))
+        if (InputSanitizer.safeImageRef(i).isNotEmpty)
+          InputSanitizer.safeImageRef(i),
+    ];
+    final directImg = InputSanitizer.safeImageRef(j['image']);
+    final mainImage = directImg.isNotEmpty
+        ? directImg
+        : (parsedImages.isNotEmpty ? parsedImages.first : '');
+
     return Car(
       id: _s(j['id']),
       brand: _s(j['brand']),
@@ -59,13 +69,11 @@ class CarModel {
       drive: _s(j['drive']),
       transmission: _s(j['transmission']),
       km: _i(j['km']),
-      image: InputSanitizer.safeImageRef(j['image']),
-      images: [
-        for (final i in (j['images'] as List? ?? const []))
-          if (InputSanitizer.safeImageRef(i).isNotEmpty)
-            InputSanitizer.safeImageRef(i),
-      ],
-      imagesCount: j['images_count'] == null ? 1 : _i(j['images_count']).clamp(1, 50),
+      image: mainImage,
+      images: parsedImages,
+      imagesCount: j['images_count'] == null
+          ? (parsedImages.isNotEmpty ? parsedImages.length : 1)
+          : _i(j['images_count']).clamp(1, 50),
       approvedPrice: j['approved_price'] as bool? ?? true,
       engine: _s(j['engine']),
       horsepower: _s(j['horsepower']),
