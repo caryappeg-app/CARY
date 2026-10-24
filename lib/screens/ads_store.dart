@@ -286,6 +286,17 @@ class AdsStore extends ChangeNotifier {
     if (_remote) _push(() => _api.delete(ad.carId, reason.trim()));
   }
 
+  /// حذف إعلان نهائياً من سلة المحذوفات (تم حذفها) ومن السيرفر
+  Future<void> purgePermanently(String id) async {
+    final i = _deleted.indexWhere((a) => a.id == id);
+    if (i == -1) return;
+    final ad = _deleted.removeAt(i);
+    notifyListeners();
+    if (_remote) {
+      _push(() => _api.purgePermanently(ad.carId));
+    }
+  }
+
   /// استبدال إعلان بنسخة معدّلة (نفس الـ id)
   void replace(MyAd ad) {
     _update(ad.id, (_) => ad);

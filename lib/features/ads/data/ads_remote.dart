@@ -99,6 +99,18 @@ class AdsRemote {
   Future<void> delete(String carId, String reason) =>
       _rpc('delete_ad', {'p_car_id': carId, 'p_reason': reason});
 
+  Future<void> purgePermanently(String carId) async {
+    try {
+      await _client.delete('/rest/v1/cars?id=eq.$carId');
+    } catch (_) {
+      try {
+        await _rpc('purge_ad', {'p_car_id': carId});
+      } catch (e) {
+        debugPrint('purgePermanently error: $e');
+      }
+    }
+  }
+
   Future<void> markSold(String carId) =>
       _rpc('mark_ad_sold', {'p_car_id': carId});
 

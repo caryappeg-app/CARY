@@ -393,9 +393,8 @@ class _ManagedAdCardState extends State<_ManagedAdCard> {
           if (_isDeleted)
             Container(
               color: AppColors.errorBg,
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(Icons.delete_outline_rounded,
                       color: AppColors.errorText, size: 22),
@@ -418,6 +417,29 @@ class _ManagedAdCardState extends State<_ManagedAdCard> {
                       style: const TextStyle(fontSize: 14.5, height: 1.6),
                     ),
                   ),
+                  const SizedBox(width: 6),
+                  Tooltip(
+                    message: 'حذف نهائي',
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => _confirmPurge(context, ad),
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          padding: const EdgeInsets.all(7),
+                          decoration: BoxDecoration(
+                            color: AppColors.error.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Icon(
+                            Icons.delete_forever_rounded,
+                            color: AppColors.error,
+                            size: 22,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -436,7 +458,7 @@ class _ManagedAdCardState extends State<_ManagedAdCard> {
                   backgroundColor: AppColors.blue,
                   foregroundColor: Colors.white,
                   elevation: 3,
-                  shadowColor: AppColors.blue.withOpacity(0.35),
+                  shadowColor: AppColors.blue.withValues(alpha: 0.35),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
                 ),
@@ -456,6 +478,34 @@ class _ManagedAdCardState extends State<_ManagedAdCard> {
               ),
             ),
           ),
+
+          // حذف نهائي (للإعلانات المحذوفة)
+          if (_isDeleted)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 0, 14, 14),
+              child: SizedBox(
+                height: 48,
+                child: OutlinedButton.icon(
+                  onPressed: () => _confirmPurge(context, ad),
+                  icon: Icon(Icons.delete_forever_rounded,
+                      color: AppColors.error, size: 22),
+                  label: Text(
+                    'حذف الإعلان نهائياً',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w800,
+                      color: AppColors.error,
+                    ),
+                  ),
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: AppColors.error, width: 1.5),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                  ),
+                ),
+              ),
+            ),
 
           // تعديل / حذف (لكل الإعلانات اللي لسه ما اتحذفتش)
           if (!_isDeleted)
@@ -687,6 +737,69 @@ class _ManagedAdCardState extends State<_ManagedAdCard> {
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ));
+  }
+
+  /// حذف نهائي للإعلان من سلة المحذوفات ومن السيرفر
+  Future<void> _confirmPurge(BuildContext context, MyAd ad) async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.surface,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Row(
+          children: [
+            Icon(Icons.warning_amber_rounded, color: AppColors.error, size: 28),
+            const SizedBox(width: 8),
+            const Text('حذف نهائي للإعلان',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
+          ],
+        ),
+        content: Text(
+          'هل أنت متأكد من حذف إعلان "${ad.title}" نهائياً من سلة المحذوفات؟ سيتم مسح بيانات الإعلان تماماً ولا يمكن التراجع عن هذا الإجراء.',
+          style:
+              TextStyle(fontSize: 14.5, color: AppColors.subtitle, height: 1.4),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text('إلغاء',
+                style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.subtitle)),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(ctx).pop(true),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.error,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+            ),
+            child: const Text('حذف نهائي',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w800)),
+          ),
+        ],
+      ),
+    );
+
+    if (ok == true && context.mounted) {
+      final messenger = ScaffoldMessenger.of(context);
+      await AdsStore.instance.purgePermanently(ad.id);
+      if (context.mounted) {
+        messenger
+          ..hideCurrentSnackBar()
+          ..showSnackBar(SnackBar(
+            content: const Text('تم حذف الإعلان نهائياً بنجاح',
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            backgroundColor: AppColors.dark,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12)),
+          ));
+      }
+    }
   }
 
   void _openDetails(BuildContext context, MyAd ad) {
