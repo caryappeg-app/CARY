@@ -166,13 +166,6 @@ class _FilterBar extends StatelessWidget {
 
 // ---------------------------------------------------------------- الكارت
 
-String _formatDate(DateTime? d) {
-  if (d == null) return '';
-  final l = d.toLocal();
-  String two(int n) => n.toString().padLeft(2, '0');
-  return '${l.year}/${two(l.month)}/${two(l.day)}';
-}
-
 class _UserCard extends StatelessWidget {
   final ManagedUser user;
   const _UserCard({required this.user});
@@ -266,11 +259,6 @@ class _UserCard extends StatelessWidget {
               icon: Icons.phone_outlined,
               value: user.phone,
               emptyText: 'رقم الهاتف غير متوفر'),
-          if (user.createdAt != null)
-            _InfoRow(
-                icon: Icons.event_outlined,
-                value: 'تاريخ التسجيل: ${_formatDate(user.createdAt)}',
-                emptyText: ''),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Divider(height: 1, color: AppColors.fieldBorder),
