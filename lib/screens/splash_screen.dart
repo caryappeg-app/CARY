@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,9 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _c = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 3600),
+    duration: kIsWeb
+        ? const Duration(milliseconds: 700)
+        : const Duration(milliseconds: 3600),
   );
 
   // اللوجو (العربية) يدخل ويفرمل (أول 62% من الوقت)
@@ -64,7 +67,9 @@ class _SplashScreenState extends State<SplashScreen>
     // التحقق من الجلسة بيشتغل بالتوازي مع أنيميشن السبلاش
     context.read<AuthCubit>().checkAuthStatus();
     _c.forward().whenComplete(() async {
-      await Future<void>.delayed(const Duration(milliseconds: 250));
+      if (!kIsWeb) {
+        await Future<void>.delayed(const Duration(milliseconds: 250));
+      }
       _goNext();
     });
   }
@@ -81,7 +86,9 @@ class _SplashScreenState extends State<SplashScreen>
         state is AuthAuthenticated ? const HomeScreen() : const LoginScreen();
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(
-        transitionDuration: const Duration(milliseconds: 600),
+        transitionDuration: kIsWeb
+            ? const Duration(milliseconds: 200)
+            : const Duration(milliseconds: 600),
         pageBuilder: (_, __, ___) => target,
         transitionsBuilder: (_, animation, __, child) => FadeTransition(
           opacity: CurvedAnimation(parent: animation, curve: Curves.easeOut),

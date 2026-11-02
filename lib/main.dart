@@ -28,8 +28,14 @@ Future<void> main() async {
   // إشعارات التليفون: الضغط على الإشعار بيفتح الشاشة المناسبة حسب نوعه
   final notifier = Injector.instance.systemNotifier;
   notifier.onTap = (payload) => NotificationRouter.instance.open(payload);
-  await notifier.init();
-  await DeepLinkService.instance.init(); // روابط مشاركة السيارات
+  if (!kIsWeb) {
+    await notifier.init();
+    await DeepLinkService.instance.init(); // روابط مشاركة السيارات
+  } else {
+    // على الويب: تشغيل غير معطل في الخلفية لسرعة الإقلاع وأول رسم للشاشة
+    notifier.init().catchError((_) {});
+    DeepLinkService.instance.init().catchError((_) {});
+  }
   runApp(const CaryApp());
 }
 
