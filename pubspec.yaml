@@ -33,6 +33,7 @@ flutter:
   assets:
     - assets/car_brands.json
     - assets/images/
+    - assets/fonts/roboto/v32/
   fonts:
     - family: Tajawal
       fonts:

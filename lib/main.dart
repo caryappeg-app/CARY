@@ -55,10 +55,19 @@ class CaryApp extends StatelessWidget {
 
   ThemeData _theme(bool dark) {
     final base = dark ? ThemeData.dark() : ThemeData.light();
+    final tajawalText = base.textTheme.apply(
+      fontFamily: 'Tajawal',
+      fontFamilyFallback: const ['Tajawal'],
+    );
+    final tajawalPrimary = base.primaryTextTheme.apply(
+      fontFamily: 'Tajawal',
+      fontFamilyFallback: const ['Tajawal'],
+    );
     return ThemeData(
       useMaterial3: true,
       brightness: dark ? Brightness.dark : Brightness.light,
       fontFamily: 'Tajawal',
+      fontFamilyFallback: const ['Tajawal'],
       scaffoldBackgroundColor: AppColors.surface,
       canvasColor: AppColors.surface,
       colorScheme: ColorScheme.fromSeed(
@@ -69,7 +78,16 @@ class CaryApp extends StatelessWidget {
         cursorColor: AppColors.blue,
         selectionHandleColor: AppColors.blue,
       ),
-      textTheme: base.textTheme.apply(fontFamily: 'Tajawal'),
+      textTheme: tajawalText,
+      primaryTextTheme: tajawalPrimary,
+      typography: Typography.material2021(
+        platform: defaultTargetPlatform,
+        black: tajawalText,
+        white: tajawalText,
+        englishLike: tajawalText,
+        dense: tajawalText,
+        tall: tajawalText,
+      ),
     );
   }
 

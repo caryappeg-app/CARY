@@ -23,7 +23,7 @@
         ]
       },
       {
-        "source": "**/*.@(wasm|woff2|ttf|webp|avif|part.js|js.map)",
+        "source": "**/*.@(wasm|woff2|ttf|otf|webp|avif)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -32,7 +32,7 @@
         ]
       },
       {
-        "source": "/assets/**",
+        "source": "/assets/@(fonts|images)/**",
         "headers": [
           {
             "key": "Cache-Control",
@@ -41,11 +41,11 @@
         ]
       },
       {
-        "source": "/main.dart.js",
+        "source": "/@(main.dart.js|*.part.js)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=86400, stale-while-revalidate=604800"
+            "value": "public, max-age=0, must-revalidate"
           }
         ]
       }

@@ -10,12 +10,18 @@
 /version.json
   Cache-Control: public, max-age=0, must-revalidate
 
-# Long immutable TTL for hashed and static assets
-/assets/*
+# Short TTL with revalidation for code bundles (unhashed names change on build)
+/main.dart.js
+  Cache-Control: public, max-age=0, must-revalidate
+*.part.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Long immutable TTL ONLY for truly static versioned assets
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/images/*
   Cache-Control: public, max-age=31536000, immutable
 *.wasm
-  Cache-Control: public, max-age=31536000, immutable
-*.part.js
   Cache-Control: public, max-age=31536000, immutable
 *.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -25,7 +31,3 @@
   Cache-Control: public, max-age=31536000, immutable
 *.otf
   Cache-Control: public, max-age=31536000, immutable
-
-# Main bundle
-/main.dart.js
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

@@ -5,7 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/theme_controller.dart';
 import '../../../notifications/presentation/cubit/notifications_cubit.dart';
-import '../../../notifications/presentation/pages/notifications_page.dart';
+import '../../../notifications/presentation/pages/notifications_page.dart'
+    deferred as notif_page show NotificationsPage;
 
 // =============================================================================
 // Top bar
@@ -33,7 +34,12 @@ class AppTopBar extends StatelessWidget {
                         ? Icons.notifications_active_rounded
                         : Icons.notifications_none_rounded,
                     tooltip: 'الإشعارات',
-                    onTap: () => NotificationsPage.open(context),
+                    onTap: () async {
+                      await notif_page.loadLibrary();
+                      if (context.mounted) {
+                        notif_page.NotificationsPage.open(context);
+                      }
+                    },
                   ),
                   if (unread > 0)
                     PositionedDirectional(
