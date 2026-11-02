@@ -14,8 +14,7 @@ import 'core/widgets/desktop_responsive_wrapper.dart';
 import 'features/auth/presentation/cubit/auth_cubit.dart';
 import 'features/notifications/presentation/cubit/notifications_cubit.dart';
 import 'features/auth/presentation/cubit/auth_state.dart';
-import 'core/widgets/deferred_loader.dart';
-import 'screens/login_screen.dart' deferred as login_screen;
+import 'screens/login_screen.dart';
 import 'screens/splash_screen.dart';
 import 'features/home/presentation/pages/home_screen.dart';
 
@@ -105,12 +104,7 @@ class CaryApp extends StatelessWidget {
                     curr is AuthUnauthenticated && curr.sessionExpired,
                 listener: (_, __) =>
                     navigatorKey.currentState?.pushAndRemoveUntil(
-                  MaterialPageRoute<void>(
-                    builder: (_) => DeferredWidget(
-                      loadLibrary: login_screen.loadLibrary,
-                      builder: () => login_screen.LoginScreen(),
-                    ),
-                  ),
+                  MaterialPageRoute<void>(builder: (_) => const LoginScreen()),
                   (_) => false,
                 ),
               ),
