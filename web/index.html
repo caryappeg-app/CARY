@@ -37,68 +37,18 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json">
 
-  <!-- Preconnect and DNS Prefetch to Google Fonts and Flutter CanvasKit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preconnect and DNS Prefetch to Flutter CanvasKit -->
   <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="dns-prefetch" href="https://www.gstatic.com">
 
-  <!-- Defer non-critical CSS (Asynchronous font loading to avoid render-blocking) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
-  </noscript>
-
-  <!-- Modernization: Map deprecated Intl.v8BreakIterator to standardized Intl.Segmenter -->
-  <script>
-    (function () {
-      if (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function') {
-        var originalV8 = Intl.v8BreakIterator;
-        Intl.v8BreakIterator = function (locales, options) {
-          var opt = options || {};
-          var type = opt.type === 'character' ? 'grapheme' : (opt.type === 'sentence' ? 'sentence' : 'word');
-          var segmenter = new Intl.Segmenter(locales, { granularity: type });
-          var text = '';
-          var segments = [];
-          var cur = 0;
-          return {
-            adoptText: function (str) {
-              text = String(str == null ? '' : str);
-              segments = Array.from(segmenter.segment(text)).map(function (s) { return s.index; });
-              segments.push(text.length);
-              cur = 0;
-            },
-            first: function () { cur = 0; return segments[0] || 0; },
-            next: function () {
-              cur++;
-              return cur < segments.length ? segments[cur] : -1;
-            },
-            current: function () {
-              return cur < segments.length ? segments[cur] : -1;
-            },
-            breakType: function () { return 'word'; }
-          };
-        };
-        Intl.v8BreakIterator.__isModernized = true;
-      }
-    })();
-  </script>
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      background-color: #FFFFFF;
-    }
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #141D2F;
-      }
-    }
-  </style>
+  <!-- Modernization: Map deprecated Intl.v8BreakIterator to standardized Intl.Segmenter (minified) -->
+  <script>(function(){if(typeof Intl!=='undefined'&&typeof Intl.Segmenter==='function'){Intl.v8BreakIterator=function(locales,opt){var type=(opt||{}).type==='character'?'grapheme':((opt||{}).type==='sentence'?'sentence':'word');var seg=new Intl.Segmenter(locales,{granularity:type}),txt='',s=[],cur=0;return{adoptText:function(t){txt=String(t==null?'':t);s=Array.from(seg.segment(txt)).map(function(x){return x.index;});s.push(txt.length);cur=0;},first:function(){cur=0;return s[0]||0;},next:function(){cur++;return cur<s.length?s[cur]:-1;},current:function(){return cur<s.length?s[cur]:-1;},breakType:function(){return'word';}};};Intl.v8BreakIterator.__isModernized=true;}})();</script>
+  <style>html,body{margin:0;height:100%;background-color:#fff}@media(prefers-color-scheme:dark){body{background-color:#141D2F}}@keyframes c-spin{to{transform:rotate(360deg)}}</style>
 </head>
 <body>
+  <!-- Instant HTML/CSS Splash (disposed on flutter-first-frame) -->
+  <div id="loading-splash" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:99999"><div style="width:42px;height:42px;border:3px solid #E2E8F0;border-top-color:#0047CC;border-radius:50%;animation:c-spin .8s linear infinite"></div></div>
+  <script>window.addEventListener('flutter-first-frame',function(){var s=document.getElementById('loading-splash');if(s)s.remove();});</script>
   <script src="flutter_bootstrap.js" async=""></script>
 </body>
 </html>

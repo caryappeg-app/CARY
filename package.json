@@ -4,9 +4,8 @@
   "description": "CARY Flutter Web performance and optimization toolchain",
   "private": true,
   "scripts": {
-    "build:web": "flutter build web --release --source-maps -O4 && node compress_web_build.cjs",
-    "build:gh-pages": "flutter build web --release --base-href \"/CARY/\" --source-maps -O4 && node compress_web_build.cjs",
-    "build:wasm": "flutter build web --release --wasm --source-maps && node compress_web_build.cjs",
+    "build:web": "flutter build web --release -O4 --tree-shake-icons --no-source-maps && node compress_web_build.cjs",
+    "build:gh-pages": "flutter build web --release --base-href \"/CARY/\" -O4 --tree-shake-icons --no-source-maps && node compress_web_build.cjs",
     "compress:images": "node convert_images.cjs",
     "compress:web": "node compress_web_build.cjs"
   }
