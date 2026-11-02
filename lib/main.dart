@@ -16,6 +16,7 @@ import 'features/notifications/presentation/cubit/notifications_cubit.dart';
 import 'features/auth/presentation/cubit/auth_state.dart';
 import 'screens/login_screen.dart';
 import 'screens/splash_screen.dart';
+import 'features/home/presentation/pages/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,7 +70,11 @@ class CaryApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthCubit>(
-          create: (_) => Injector.instance.createAuthCubit(),
+          create: (_) {
+            final cubit = Injector.instance.createAuthCubit();
+            if (kIsWeb) cubit.checkAuthStatus();
+            return cubit;
+          },
         ),
         BlocProvider<NotificationsCubit>(
           create: (_) => Injector.instance.createNotificationsCubit(),
@@ -120,7 +125,7 @@ class CaryApp extends StatelessWidget {
             ),
           ),
           theme: _theme(ThemeController.instance.isDark),
-          home: const SplashScreen(),
+          home: kIsWeb ? const HomeScreen() : const SplashScreen(),
         ),
       ),
     );

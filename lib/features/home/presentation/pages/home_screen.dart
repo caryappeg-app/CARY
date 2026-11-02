@@ -45,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static const int _bookingsTabIndex = 4;
 
   int _tab = 0;
+  final Set<int> _loadedTabs = {0};
 
   // الإعلانات في مخزن مشترك (AdsStore) عشان الأدمن/المالك يديروها من "إدارة الإعلانات"
   final AdsStore _store = AdsStore.instance;
@@ -184,6 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
   /// بعد إرسال إعلان من "بيع سيارتك": بيتضاف في "إعلاناتي" ونروح للتاب ده
   void _publishAd(MyAd ad) {
     _store.add(ad);
+    _loadedTabs.add(1);
     setState(() => _tab = 1);
   }
 
@@ -239,7 +241,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   /// بعد تأكيد الحجز / طلب الشراء: ننقل لتاب حجوزاتي
-  void _goToBookings() => setState(() => _tab = _bookingsTabIndex);
+  void _goToBookings() {
+    _loadedTabs.add(_bookingsTabIndex);
+    setState(() => _tab = _bookingsTabIndex);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -268,24 +273,40 @@ class _HomeScreenState extends State<HomeScreen> {
                     onBooked: _goToBookings,
                     reselectSignal: _homeReselect,
                   ),
-                  BlocBuilder<AccountCubit, AccountState>(
-                    builder: (context, _) => MyAdsTab(
-                      ads: _myAds(),
-                      onBack: () => setState(() => _tab = 0),
-                      onAddNew: () => setState(() => _tab = 2),
-                      onSold: _markSold,
-                      onOpen: _openMyAd,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      const AppTopBar(),
-                      Expanded(child: SellCarTab(onPublished: _publishAd)),
-                    ],
-                  ),
-                  FavoritesTab(onBooked: _goToBookings),
-                  BookingsTab(onBooked: _goToBookings),
-                  const AccountTab(),
+                  _loadedTabs.contains(1)
+                      ? BlocBuilder<AccountCubit, AccountState>(
+                          builder: (context, _) => MyAdsTab(
+                            ads: _myAds(),
+                            onBack: () {
+                              _loadedTabs.add(0);
+                              setState(() => _tab = 0);
+                            },
+                            onAddNew: () {
+                              _loadedTabs.add(2);
+                              setState(() => _tab = 2);
+                            },
+                            onSold: _markSold,
+                            onOpen: _openMyAd,
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                  _loadedTabs.contains(2)
+                      ? Column(
+                          children: [
+                            const AppTopBar(),
+                            Expanded(child: SellCarTab(onPublished: _publishAd)),
+                          ],
+                        )
+                      : const SizedBox.shrink(),
+                  _loadedTabs.contains(3)
+                      ? FavoritesTab(onBooked: _goToBookings)
+                      : const SizedBox.shrink(),
+                  _loadedTabs.contains(4)
+                      ? BookingsTab(onBooked: _goToBookings)
+                      : const SizedBox.shrink(),
+                  _loadedTabs.contains(5)
+                      ? const AccountTab()
+                      : const SizedBox.shrink(),
                 ],
               ),
             ),
@@ -302,6 +323,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (i == 0 && _tab == 0) {
                   _homeReselect.value++; // نفس التاب: تحديث + أول القايمة
                 } else {
+                  _loadedTabs.add(i);
                   setState(() => _tab = i);
                 }
               },

@@ -51,11 +51,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
   </noscript>
 
-  <!-- Preload Largest Contentful Paint (LCP) Splash Image with High Priority across all DPRs -->
-  <link rel="preload" as="image" href="splash/img/light-2x.webp"
-        imagesrcset="splash/img/light-1x.webp 1x, splash/img/light-2x.webp 2x, splash/img/light-3x.webp 3x, splash/img/light-4x.webp 4x"
-        type="image/webp" fetchpriority="high">
-
   <!-- Modernization: Map deprecated Intl.v8BreakIterator to standardized Intl.Segmenter -->
   <script>
     (function () {
@@ -90,103 +85,20 @@
       }
     })();
   </script>
-  <style id="splash-screen-style">
-    html {
-      height: 100%
-    }
-
-    body {
+  <style>
+    html, body {
       margin: 0;
-      min-height: 100%;
+      height: 100%;
       background-color: #FFFFFF;
-          background-size: 100% 100%;
     }
-
-    .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 192px;
-      height: 192px;
-    }
-
-    .contain {
-      display:block;
-      width:100%; height:100%;
-      object-fit: contain;
-    }
-
-    .stretch {
-      display:block;
-      width:100%; height:100%;
-    }
-
-    .cover {
-      display:block;
-      width:100%; height:100%;
-      object-fit: cover;
-    }
-
-    .bottom {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0);
-    }
-
-    .bottomLeft {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    .bottomRight {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
-
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #141D2F;
-          }
+      }
     }
   </style>
-  <script id="splash-screen-script">
-    function removeSplashFromWeb() {
-      document.getElementById("splash")?.remove();
-      document.getElementById("splash-branding")?.remove();
-      document.body.style.background = "transparent";
-    }
-  </script>
 </head>
 <body>
-  <!-- LCP Splash: Modern WebP formats with PNG fallbacks, high fetch priority, avoiding lazy loading -->
-  <picture id="splash">
-      <source type="image/webp" srcset="splash/img/light-1x.webp 1x, splash/img/light-2x.webp 2x, splash/img/light-3x.webp 3x, splash/img/light-4x.webp 4x" media="(prefers-color-scheme: light)">
-      <source type="image/webp" srcset="splash/img/dark-1x.webp 1x, splash/img/dark-2x.webp 2x, splash/img/dark-3x.webp 3x, splash/img/dark-4x.webp 4x" media="(prefers-color-scheme: dark)">
-      <source type="image/png" srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
-      <source type="image/png" srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
-      <img class="center" aria-hidden="true" src="splash/img/light-2x.webp" srcset="splash/img/light-1x.webp 1x, splash/img/light-2x.webp 2x, splash/img/light-3x.webp 3x, splash/img/light-4x.webp 4x" alt="CARY" width="192" height="192" fetchpriority="high" loading="eager" decoding="async">
-  </picture>
-  
-  
-  
-  
-  
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
   <script src="flutter_bootstrap.js" async=""></script>
-
-
-</body></html>
+</body>
+</html>
