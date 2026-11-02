@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../core/utils/formatters.dart';
-import '../../../../screens/brand_picker_sheet.dart';
+import '../../../../screens/brand_picker_sheet.dart' deferred as brand_picker show showBrandPickerSheet;
 import '../../../../screens/car_brand.dart';
 import '../../../../screens/field_tile.dart';
 import '../../../home/presentation/widgets/app_top_bar.dart';
@@ -105,7 +105,9 @@ class _HomeTabState extends State<HomeTab> {
   Future<void> _pickBrand() async {
     FocusScope.of(context).unfocus();
     final cubit = _cubit;
-    final picked = await showBrandPickerSheet(
+    await brand_picker.loadLibrary();
+    if (!mounted) return;
+    final picked = await brand_picker.showBrandPickerSheet(
       context,
       selected: _brand,
       brandCounts: cubit.state.brandCounts,

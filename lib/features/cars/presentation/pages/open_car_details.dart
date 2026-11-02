@@ -8,14 +8,14 @@ import '../../../account/presentation/cubit/account_cubit.dart';
 import '../../domain/entities/car.dart';
 import '../cubit/bookings_cubit.dart';
 import '../cubit/favorites_cubit.dart';
-import 'car_details_screen.dart';
+import 'car_details_screen.dart' deferred as car_details show CarDetailsScreen;
 
 /// [onBooked] بتتنادى بعد تأكيد الحجز (الشاشة الرئيسية بتنقلك لتاب حجوزاتي)
 void openCarDetails(
   BuildContext context,
   Car initialCar, {
   required VoidCallback onBooked,
-}) {
+}) async {
   // بنمسك الـ Cubits قبل الـ push لأن الشاشة الجديدة route مستقل
   final favorites = context.read<FavoritesCubit>();
   final bookings = context.read<BookingsCubit>();
@@ -28,9 +28,12 @@ void openCarDetails(
   final isOwnCar = myEmail.isNotEmpty &&
       AdsStore.instance.ownerEmailForCar(car.id) == myEmail;
 
+  await car_details.loadLibrary();
+  if (!context.mounted) return;
+
   Navigator.of(context).push(
     MaterialPageRoute(
-      builder: (_) => CarDetailsScreen(
+      builder: (_) => car_details.CarDetailsScreen(
         car: car,
         bookingBlockedMessage:
             isOwnCar ? 'ده إعلانك — مينفعش تحجز سيارتك بنفسك' : null,

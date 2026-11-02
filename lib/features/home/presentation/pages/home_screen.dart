@@ -11,24 +11,25 @@ import '../../../../constants/theme_controller.dart';
 import '../../../../core/config/app_config.dart';
 import '../../../../core/di/injection.dart';
 import '../../../../core/push/notification_router.dart';
-import '../../../ads/presentation/pages/ads_management_page.dart';
-import '../../../bookings_admin/presentation/pages/bookings_management_page.dart';
-import '../../../feedback/presentation/pages/feedback_management_page.dart';
-import '../../../notifications/presentation/pages/notifications_page.dart';
+import '../../../../core/widgets/deferred_loader.dart';
+import '../../../ads/presentation/pages/ads_management_page.dart' deferred as ads_admin show AdsManagementPage;
+import '../../../bookings_admin/presentation/pages/bookings_management_page.dart' deferred as bookings_admin show BookingsManagementPage;
+import '../../../feedback/presentation/pages/feedback_management_page.dart' deferred as feedback_admin show FeedbackManagementPage;
+import '../../../notifications/presentation/pages/notifications_page.dart' deferred as notif_page show NotificationsPage;
 import '../../../../screens/ads_store.dart';
 import '../../../../screens/bookings_store.dart';
 import '../../../../screens/my_ad.dart';
-import '../../../../screens/my_ads_tab.dart';
-import '../../../../screens/sell_car_tab.dart';
+import '../../../../screens/my_ads_tab.dart' deferred as my_ads show MyAdsTab;
+import '../../../../screens/sell_car_tab.dart' deferred as sell_car show SellCarTab;
 import '../../../account/presentation/cubit/account_cubit.dart';
-import '../../../account/presentation/pages/account_tab.dart';
+import '../../../account/presentation/pages/account_tab.dart' deferred as account_tab show AccountTab;
 import '../../../cars/presentation/cubit/bookings_cubit.dart';
 import '../../../cars/presentation/cubit/cars_cubit.dart';
 import '../../../cars/presentation/cubit/cars_state.dart';
 import '../../../cars/presentation/cubit/favorites_cubit.dart';
-import '../../../cars/presentation/pages/bookings_tab.dart';
-import '../../../cars/presentation/pages/favorites_tab.dart';
-import '../../../cars/presentation/pages/car_details_screen.dart';
+import '../../../cars/presentation/pages/bookings_tab.dart' deferred as book_tab show BookingsTab;
+import '../../../cars/presentation/pages/favorites_tab.dart' deferred as fav_tab show FavoritesTab;
+import '../../../cars/presentation/pages/car_details_screen.dart' deferred as car_details show CarDetailsScreen;
 import '../../../cars/presentation/pages/home_tab.dart';
 import '../../../cars/presentation/widgets/car_link_listener.dart';
 import '../widgets/app_top_bar.dart';
@@ -105,26 +106,35 @@ class _HomeScreenState extends State<HomeScreen> {
   /// خطأ من عملية على السيرفر (رفع إعلان / قبول / حذف...): نعرضه للمستخدم
   /// الضغط على إشعار (من التليفون أو Push): حجز جديد -> إدارة الحجوزات،
   /// إعلان جديد -> إدارة الإعلانات، رأي جديد -> آراء العملاء، غير كده -> الإشعارات
-  void _openForNotification(String? type) {
+  void _openForNotification(String? type) async {
     if (!mounted) return;
     switch (type) {
       case 'newBooking':
-        BookingsManagementPage.open(context);
+        await bookings_admin.loadLibrary();
+        if (mounted) bookings_admin.BookingsManagementPage.open(context);
       case 'newAd':
-      // الإعلان الجديد ممكن لسه ما وصلش: نحدّث القايمة ونفتح على "قيد المراجعة"
         _store.loadFromServer(force: true);
-        AdsManagementPage.open(
-          context,
-          pending: true,
-          carsCubit: _carsCubit,
-          accountCubit: _accountCubit,
-        );
+        await ads_admin.loadLibrary();
+        if (mounted) {
+          ads_admin.AdsManagementPage.open(
+            context,
+            pending: true,
+            carsCubit: _carsCubit,
+            accountCubit: _accountCubit,
+          );
+        }
       case 'newFeedback':
-        FeedbackManagementPage.open(context, accountCubit: _accountCubit);
+        await feedback_admin.loadLibrary();
+        if (mounted) {
+          feedback_admin.FeedbackManagementPage.open(context, accountCubit: _accountCubit);
+        }
       default:
-        Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const NotificationsPage()),
-        );
+        await notif_page.loadLibrary();
+        if (mounted) {
+          Navigator.of(context).push(
+            MaterialPageRoute<void>(builder: (_) => notif_page.NotificationsPage()),
+          );
+        }
     }
   }
 
@@ -191,11 +201,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// "عرض وتعديل" (للإعلان وهو قيد المراجعة): نعرض كل التفاصيل والصور،
   /// ومن هناك زرار "تعديل الإعلان" بيفتح الفورم معبّي ببيانات الإعلان.
-  void _openMyAd(MyAd ad) {
+  void _openMyAd(MyAd ad) async {
     if (ad.status != MyAdStatus.pending) return;
+    await car_details.loadLibrary();
+    if (!mounted) return;
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => CarDetailsScreen(
+        builder: (_) => car_details.CarDetailsScreen(
           car: ad.toCar(),
           viewOnly: true,
           onEdit: () => _editMyAd(ad),
@@ -204,7 +216,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _editMyAd(MyAd ad) {
+  void _editMyAd(MyAd ad) async {
+    if (!mounted) return;
+    await sell_car.loadLibrary();
     if (!mounted) return;
     Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -221,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
               elevation: 0,
               iconTheme: IconThemeData(color: AppColors.title),
             ),
-            body: SellCarTab(
+            body: sell_car.SellCarTab(
               editing: ad,
               onPublished: (updated) {
                 _store.replace(updated);
@@ -274,19 +288,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     reselectSignal: _homeReselect,
                   ),
                   _loadedTabs.contains(1)
-                      ? BlocBuilder<AccountCubit, AccountState>(
-                          builder: (context, _) => MyAdsTab(
-                            ads: _myAds(),
-                            onBack: () {
-                              _loadedTabs.add(0);
-                              setState(() => _tab = 0);
-                            },
-                            onAddNew: () {
-                              _loadedTabs.add(2);
-                              setState(() => _tab = 2);
-                            },
-                            onSold: _markSold,
-                            onOpen: _openMyAd,
+                      ? DeferredWidget(
+                          loadLibrary: my_ads.loadLibrary,
+                          builder: () => BlocBuilder<AccountCubit, AccountState>(
+                            builder: (context, _) => my_ads.MyAdsTab(
+                              ads: _myAds(),
+                              onBack: () {
+                                _loadedTabs.add(0);
+                                setState(() => _tab = 0);
+                              },
+                              onAddNew: () {
+                                _loadedTabs.add(2);
+                                setState(() => _tab = 2);
+                              },
+                              onSold: _markSold,
+                              onOpen: _openMyAd,
+                            ),
                           ),
                         )
                       : const SizedBox.shrink(),
@@ -294,18 +311,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       ? Column(
                           children: [
                             const AppTopBar(),
-                            Expanded(child: SellCarTab(onPublished: _publishAd)),
+                            Expanded(
+                              child: DeferredWidget(
+                                loadLibrary: sell_car.loadLibrary,
+                                builder: () => sell_car.SellCarTab(onPublished: _publishAd),
+                              ),
+                            ),
                           ],
                         )
                       : const SizedBox.shrink(),
                   _loadedTabs.contains(3)
-                      ? FavoritesTab(onBooked: _goToBookings)
+                      ? DeferredWidget(
+                          loadLibrary: fav_tab.loadLibrary,
+                          builder: () => fav_tab.FavoritesTab(onBooked: _goToBookings),
+                        )
                       : const SizedBox.shrink(),
                   _loadedTabs.contains(4)
-                      ? BookingsTab(onBooked: _goToBookings)
+                      ? DeferredWidget(
+                          loadLibrary: book_tab.loadLibrary,
+                          builder: () => book_tab.BookingsTab(onBooked: _goToBookings),
+                        )
                       : const SizedBox.shrink(),
                   _loadedTabs.contains(5)
-                      ? const AccountTab()
+                      ? DeferredWidget(
+                          loadLibrary: account_tab.loadLibrary,
+                          builder: () => account_tab.AccountTab(),
+                        )
                       : const SizedBox.shrink(),
                 ],
               ),
