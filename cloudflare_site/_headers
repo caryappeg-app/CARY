@@ -1,5 +1,49 @@
+# Deep Linking Verification Endpoints
 /.well-known/assetlinks.json
   Content-Type: application/json
   Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
 /.well-known/apple-app-site-association
   Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
+# HTML entry points: never stale
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/car.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Flutter Web & Bootstrap assets
+/flutter_bootstrap.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/flutter_service_worker.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/main.dart.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*.wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.part.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js.map
+  Cache-Control: public, max-age=31536000, immutable
+
+# Assets and media
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.avif
+  Cache-Control: public, max-age=31536000, immutable

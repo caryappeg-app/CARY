@@ -1,0 +1,95 @@
+# ==============================================================================
+# CARY Flutter Web - Cloudflare Pages / Netlify Cache & Security Headers
+# Best-practice caching strategy for Flutter Web applications
+# ==============================================================================
+
+# 1. Root and Entry HTML: Never serve stale index or bootstrapping scripts
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/flutter_bootstrap.js
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+/flutter_service_worker.js
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+/version.json
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: application/json; charset=utf-8
+
+/manifest.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Content-Type: application/manifest+json; charset=utf-8
+
+# 2. Main JavaScript Application & Source Maps
+/main.dart.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  X-Content-Type-Options: nosniff
+
+/*.part.js
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.js.map
+  Cache-Control: public, max-age=31536000, immutable
+
+# 3. WebAssembly (Wasm) and CanvasKit: 1-Year Immutable Cache
+/*.wasm
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/wasm
+
+/canvaskit/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 4. Modern Image Assets (WebP, AVIF) & Fonts: Long-term Immutable Cache
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/*.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: font/woff2
+
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: font/ttf
+
+# 5. Splash and Icon Assets
+/splash/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/icons/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# 6. Deep Linking Verification Endpoints
+/.well-known/assetlinks.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400

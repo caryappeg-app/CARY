@@ -439,7 +439,14 @@ class CarImageView extends StatelessWidget {
             : (car.allImages.isNotEmpty ? car.allImages.first.trim() : ''));
     if (raw.isEmpty) return const [];
     final name = raw.split('/').last;
-    return {raw, 'assets/images/$name', 'assets/$name'}.toList();
+    final dot = name.lastIndexOf('.');
+    final baseName = dot != -1 ? name.substring(0, dot) : name;
+    return {
+      'assets/images/$baseName.webp',
+      raw,
+      'assets/images/$name',
+      'assets/$name',
+    }.toList();
   }
 
   Widget _build(List<String> candidates, int index) {

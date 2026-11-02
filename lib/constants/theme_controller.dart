@@ -33,10 +33,10 @@ class ThemeController extends ChangeNotifier {
     root.visitChildren(rebuild);
   }
 
-  /// لوجو التطبيق حسب الوضع (فاتح + داكن: png)
+  /// لوجو التطبيق حسب الوضع (فاتح + داكن: WebP مضغوط عالي الكفاءة)
   static String get logoAsset => instance.isDark
-      ? 'assets/images/cary_logo_dark.png'
-      : 'assets/images/cary_logo.png';
+      ? 'assets/images/cary_logo_dark.webp'
+      : 'assets/images/cary_logo.webp';
 
   /// لون الستارة اللي ورا النوافذ والـ bottom sheets
   static Color get barrierColor =>

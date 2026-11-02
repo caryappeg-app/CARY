@@ -52,7 +52,7 @@ jobs:
             "ADS_WORKER_URL": "https://cary-ads-api.cary-app-eg.workers.dev"
           }
           EOF
-          flutter build web --release --dart-define-from-file=env.json --base-href "/${{ github.event.repository.name }}/"
+          flutter build web --release -O4 --source-maps --dart-define-from-file=env.json --base-href "/${{ github.event.repository.name }}/"
           cp build/web/index.html build/web/404.html
 
       - name: Setup Pages

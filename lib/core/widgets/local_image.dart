@@ -61,11 +61,20 @@ class LocalImage extends StatelessWidget {
       }
       return fileImageWidget(trimmed, fit: fit, errorBuilder: broken);
     }
-    // اسم ملف عادي بدون مسار مثلاً: "camry.png"
+    // اسم ملف عادي أو مسار أصل: بنجرّب صيغة webp أولاً لتقليل الحجم ثم الأصل
+    final targetPath =
+        trimmed.contains('/') ? trimmed : 'assets/images/$trimmed';
+    final dot = targetPath.lastIndexOf('.');
+    final webpPath =
+        dot != -1 ? '${targetPath.substring(0, dot)}.webp' : '$targetPath.webp';
     return Image.asset(
-      trimmed.contains('/') ? trimmed : 'assets/images/$trimmed',
+      webpPath,
       fit: fit,
-      errorBuilder: (_, __, ___) => fallback,
+      errorBuilder: (_, __, ___) => Image.asset(
+        targetPath,
+        fit: fit,
+        errorBuilder: (_, __, ___) => fallback,
+      ),
     );
   }
 }
