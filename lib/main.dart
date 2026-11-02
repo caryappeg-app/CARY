@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'constants/app_colors.dart';
 import 'constants/theme_controller.dart';
 import 'core/deeplink/deep_link_service.dart';
@@ -18,33 +19,26 @@ import 'screens/login_screen.dart' deferred as login_screen;
 import 'screens/splash_screen.dart';
 import 'features/home/presentation/pages/home_screen.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // إعداد مسار الضغط على الإشعارات قبل الإقلاع
+  // أعلى معدّل تحديث للشاشة يدعمه الجهاز (90/120Hz) بدل 60Hz الافتراضي على أندرويد
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+    try {
+      await FlutterDisplayMode.setHighRefreshRate();
+    } catch (_) {}
+  }
+  // إشعارات التليفون: الضغط على الإشعار بيفتح الشاشة المناسبة حسب نوعه
   final notifier = Injector.instance.systemNotifier;
   notifier.onTap = (payload) => NotificationRouter.instance.open(payload);
-
-  // إقلاع فوري للتطبيق دون حظر الإطار الأول (First Frame)
+  if (!kIsWeb) {
+    await notifier.init();
+    await DeepLinkService.instance.init(); // روابط مشاركة السيارات
+  } else {
+    // على الويب: تشغيل غير معطل في الخلفية لسرعة الإقلاع وأول رسم للشاشة
+    notifier.init().catchError((_) {});
+    DeepLinkService.instance.init().catchError((_) {});
+  }
   runApp(const CaryApp());
-
-  // تأجيل كافة العمليات والخدمات الثانوية لما بعد رسم أول إطار على الشاشة
-  WidgetsBinding.instance.addPostFrameCallback((_) async {
-    final futures = <Future<void>>[];
-
-    // 1. تفعيل أعلى معدل تحديث للشاشة على أجهزة أندرويد فقط
-    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
-      futures.add(FlutterDisplayMode.setHighRefreshRate().catchError((_) {}));
-    }
-
-    // 2. تهيئة الإشعارات في الخلفية
-    futures.add(notifier.init().catchError((_) {}));
-
-    // 3. تهيئة روابط المشاركة (Deep Links) في الخلفية
-    futures.add(DeepLinkService.instance.init().catchError((_) {}));
-
-    await Future.wait(futures);
-  });
 }
 
 class CaryApp extends StatelessWidget {
@@ -58,7 +52,6 @@ class CaryApp extends StatelessWidget {
     return ThemeData(
       useMaterial3: true,
       brightness: dark ? Brightness.dark : Brightness.light,
-      fontFamily: 'Tajawal',
       scaffoldBackgroundColor: AppColors.surface,
       canvasColor: AppColors.surface,
       colorScheme: ColorScheme.fromSeed(
@@ -69,7 +62,7 @@ class CaryApp extends StatelessWidget {
         cursorColor: AppColors.blue,
         selectionHandleColor: AppColors.blue,
       ),
-      textTheme: base.textTheme.apply(fontFamily: 'Tajawal'),
+      textTheme: GoogleFonts.tajawalTextTheme(base.textTheme),
     );
   }
 

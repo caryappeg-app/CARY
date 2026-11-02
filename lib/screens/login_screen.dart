@@ -1,6 +1,7 @@
 import 'package:cary_app/screens/reset_password_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/theme_controller.dart';
@@ -483,8 +484,7 @@ class _Logo extends StatelessWidget {
               const SizedBox(height: 2),
               Text(
                 'CARY',
-                style: TextStyle(
-                  fontFamily: 'Tajawal',
+                style: GoogleFonts.montserrat(
                   color: AppColors.navy,
                   fontWeight: FontWeight.w800,
                   fontSize: 18,
